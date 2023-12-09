@@ -76,9 +76,17 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="AssetManagmentPage.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AssetManagmentPage.aspx.cs">
+      <DependentUpon>AssetManagmentPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AssetManagmentPage.aspx.designer.cs">
+      <DependentUpon>AssetManagmentPage.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Entities\Asset.cs" />
     <Compile Include="Entities\C__MigrationHistory.cs" />
     <Compile Include="Contexts\DatabaseContext.cs" />
