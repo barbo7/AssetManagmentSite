@@ -77,6 +77,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="AssetManagmentPage.aspx" />
+    <Content Include="Assets\bootstrap\css\bootstrap.min.css" />
+    <Content Include="Assets\bootstrap\js\bootstrap.min.js" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
