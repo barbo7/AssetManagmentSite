@@ -79,6 +79,7 @@
     <Content Include="AssetManagmentPage.aspx" />
     <Content Include="Assets\bootstrap\css\bootstrap.min.css" />
     <Content Include="Assets\bootstrap\js\bootstrap.min.js" />
+    <Content Include="PersonelManagmentPage.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -101,6 +102,13 @@
       <DependentUpon>202312042151195_mig1.cs</DependentUpon>
     </Compile>
     <Compile Include="Entities\Migrations\Configuration.cs" />
+    <Compile Include="PersonelManagmentPage.aspx.cs">
+      <DependentUpon>PersonelManagmentPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PersonelManagmentPage.aspx.designer.cs">
+      <DependentUpon>PersonelManagmentPage.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
