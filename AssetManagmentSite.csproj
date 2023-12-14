@@ -81,6 +81,7 @@
     <Content Include="Assets\bootstrap\js\bootstrap.min.js" />
     <Content Include="InventoryManagementPage.aspx" />
     <Content Include="PersonelManagmentPage.aspx" />
+    <Content Include="ReportingPage.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -118,9 +119,24 @@
       <DependentUpon>PersonelManagmentPage.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ReportingPage.aspx.cs">
+      <DependentUpon>ReportingPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ReportingPage.aspx.designer.cs">
+      <DependentUpon>ReportingPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Site1.Master.cs">
+      <DependentUpon>Site1.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Site1.Master.designer.cs">
+      <DependentUpon>Site1.Master</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+    <Content Include="Site1.Master" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

@@ -67,18 +67,18 @@
                                         <div class="col-md-6 col-lg-5 col-xl-6 col-xxl-5"><label
                                                 class="form-label">Personel Ad Soyad</label><input
                                                 class="border-secondary form-control form-control-sm" type="text"
-                                                placeholder="(Örn. Bora SAPANCILAR)" style="margin-bottom: 10px;"></div>
+                                                placeholder="(Örn. Bora SAPANCILAR)" style="margin-bottom: 10px;"/></div>
                                         <div class="col-md-6 col-lg-5 col-xl-6 col-xxl-5"><label
                                                 class="form-label">Personel Departmanı&nbsp;</label><input
                                                 class="border-secondary form-control form-control-sm" type="text"
-                                                placeholder="Bilişim" inputmode="numeric" style="margin-bottom: 10px;">
+                                                placeholder="Bilişim" inputmode="numeric" style="margin-bottom: 10px;"/>
                                         </div>
                                     </div>
                                     <div class="row">
                                         <div class="col-md-6 col-lg-5 col-xl-6 col-xxl-5"><label
-                                                class="form-label">Personel Rolü</label><input
+                                                class="form-label"/>Personel Rolü<input
                                                 class="border-secondary form-control" type="text"
-                                                placeholder="Yazılım Geliştirme Personeli" style="margin-bottom: 10px;">
+                                                placeholder="Yazılım Geliştirme Personeli" style="margin-bottom: 10px;"/>
                                         </div>
                                         <div class="col-md-6 col-lg-5 col-xxl-5"><label class="form-label">Personel
                                                 Eklenmek İstenen Detayları</label><textarea class="form-control"
@@ -124,11 +124,11 @@
                                         <div class="col-md-6 col-lg-6 col-xl-6 col-xxl-5"><label
                                                 class="form-label">Personel Ad Soyad</label><input
                                                 class="border-secondary form-control form-control-sm" type="text"
-                                                style="margin-bottom: 10px;"></div>
+                                                style="margin-bottom: 10px;"/></div>
                                         <div class="col-md-6 col-lg-6 col-xl-6 col-xxl-5"><label
                                                 class="form-label">Personel Rolü</label><input
                                                 class="border-secondary form-control form-control-sm" type="text"
-                                                inputmode="numeric" style="margin-bottom: 10px;"></div>
+                                                inputmode="numeric" style="margin-bottom: 10px;"/></div>
                                     </div>
                                     <div class="row">
                                         <div class="col-xxl-10"><label class="form-label">Personel
