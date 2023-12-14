@@ -113,7 +113,7 @@
         <div>
             <div class="card">
                 <div class="card-body">
-                    <h4 class="card-title">bakım Kayıtları</h4>
+                    <h4 class="card-title">Bakım Kayıtları</h4>
                     <div class="table-responsive" style="text-align: center;">
                         <table class="table table-hover">
                             <thead style="text-align: center;">

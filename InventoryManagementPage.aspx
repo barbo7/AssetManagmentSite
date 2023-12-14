@@ -24,13 +24,13 @@
 						placeholder="Ürün Ara" autocomplete="on"/></div>
 			</div>
 			<div class="table-responsive">
-				<table class="table">
+				<table class="table" style="text-align: center;">
 					<thead>
 						<tr>
-							<th style="text-align: center;">Ürün ID</th>
-							<th style="text-align: center;">Ürün Adı</th>
-							<th style="text-align: center;">Ürün Miktarı</th>
-							<th style="text-align: center;">Yeniden Sipariş Seviyesi</th>
+							<th>Ürün ID</th>
+							<th>Ürün Adı</th>
+							<th>Ürün Miktarı</th>
+							<th>Yeniden Sipariş Seviyesi</th>
 						</tr>
 					</thead>
 					<tbody>
@@ -51,7 +51,7 @@
 			<form class="border rounded-0 shadow-sm">
 				<div class="row">
 					<div class="col-md-12 col-lg-12 col-xl-12">
-						<h4 class="text-start" style="color: var(--bs-primary-text-emphasis);">Envanter İşlemleri</h4>
+						<h4 class="text-start" style="color: var(--bs-primary-text-emphasis);text-decoration:underline"">Envanter İşlemleri</h4>
 						<div>
 							<ul class="nav nav-tabs" role="tablist">
 								<li class="nav-item" role="presentation"><a class="nav-link" role="tab"
@@ -127,7 +127,8 @@
 						</div>
 					</div>
 				</div>
-				<h3>Stok Takip</h3>
+				<hr />
+				<h3 style="text-decoration:underline">Stok Takip</h3>
 				<div class="row">
 					<div class="col-md-3 col-lg-2"></div>
 					<div class="col-md-3 col-lg-2"></div>
