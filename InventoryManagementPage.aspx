@@ -24,21 +24,21 @@
 						placeholder="Ürün Ara" autocomplete="on"/></div>
 			</div>
 			<div class="table-responsive">
-				<table class="table" style="text-align: center;">
+				<table class="table">
 					<thead>
 						<tr>
-							<th>Ürün ID</th>
-							<th>Ürün Adı</th>
-							<th>Ürün Miktarı</th>
-							<th>Yeniden Sipariş Seviyesi</th>
+							<th style="text-align: center;">Ürün ID</th>
+							<th style="text-align: center;">Ürün Adı</th>
+							<th style="text-align: center;">Ürün Miktarı</th>
+							<th style="text-align: center;">Yeniden Sipariş Seviyesi</th>
 						</tr>
 					</thead>
 					<tbody>
 						<tr>
-							<td>ID1</td>
-							<td>Urün adi1</td>
-							<td>Ürün Miktari1</td>
-							<td>Yeniden Siparis Seviyesi1</td>
+							<td class="text-center">ID1</td>
+							<td class="text-center">Urün adi1</td>
+							<td class="text-center">Ürün Miktari1</td>
+							<td class="text-center">Yeniden Siparis Seviyesi1</td>
 						</tr>
 						<tr></tr>
 						<tr></tr>
@@ -47,18 +47,19 @@
 			</div>
 			<hr/>
 		</div>
+		<hr/>
 		<div>
 			<form class="border rounded-0 shadow-sm">
 				<div class="row">
 					<div class="col-md-12 col-lg-12 col-xl-12">
-						<h4 class="text-start" style="color: var(--bs-primary-text-emphasis);text-decoration:underline"">Envanter İşlemleri</h4>
+						<h4 class="text-start" style="color: var(--bs-primary-text-emphasis);">Envanter İşlemleri</h4>
 						<div>
 							<ul class="nav nav-tabs" role="tablist">
 								<li class="nav-item" role="presentation"><a class="nav-link" role="tab"
-										data-bs-toggle="tab" href="#tab-1" style="color: rgb(65,208,29);">Envanter Veri
+										data-bs-toggle="tab" href="#tab-1" style="color: rgb(65,208,29);">Veri
 										Girişi</a></li>
 								<li class="nav-item" role="presentation"><a class="nav-link active" role="tab"
-										data-bs-toggle="tab" href="#tab-2" style="color: rgb(171,15,210);">Envanter Veri
+										data-bs-toggle="tab" href="#tab-2" style="color: rgb(171,15,210);">Veri
 										Güncelle</a></li>
 							</ul>
 							<div class="tab-content">
@@ -77,13 +78,31 @@
 									<div class="row">
 										<div class="col-md-6 col-lg-6 col-xl-6 col-xxl-5"><label
 												class="form-label">Yeniden Sipariş Seviyesi</label><input
-												class="border-secondary form-control" type="text"
+												class="border-secondary form-control form-control-sm" type="text"
 												placeholder="Yeniden sipariş için gereken minimum miktar."
 												style="margin-bottom: 10px;" inputmode="numeric" minlength="1"/></div>
-										<div class="col" style="text-align: right;"><button
-												class="btn btn-primary btn-lg" type="button"
-												style="margin-top: 20px;">Kaydet</button></div>
+										<div class="col-md-6"><label class="form-label">Ürün Fiyatı</label>
+											<div class="input-group input-group-sm"
+												style="padding-top: 0px;padding-bottom: 0px;padding-left: 0px;margin-left: -5px;margin-top: 0px;">
+												<div class="input-group-text input-group-prepend" style="height: 35px;">
+													<span class="text-white bg-primary input-group-text"
+														style="height: 30px;background: rgb(234,164,60);">₺</span></div>
+												<input class="form-control form-control" type="text"
+													aria-label="Amount (to the nearest dollar)"
+													style="width: 180px;height: 35px;" placeholder="Ürün fiyatı"
+													maxlength="18" required="" inputmode="numeric"/>
+												<div class="input-group-text input-group-append"
+													style="padding-left: 12px;width: 60px;height: 35px;"><input
+														class="border rounded-0 form-control form-control-sm form-control"
+														type="text" aria-label="Amount (to the nearest dollar)"
+														style="width: 38px;" value=".00" inputmode="numeric"
+														maxlength="3" minlength="2" required="" autocomplete="on"/></div>
+											</div>
+										</div>
 									</div>
+									<div class="col text-center" style="text-align: right;"><button
+											class="btn btn-dark btn-lg" type="button"
+											style="margin-top: 5px;">Kaydet</button></div>
 								</div>
 								<div class="tab-pane active" role="tabpanel" id="tab-2">
 									<div class="row">
@@ -117,6 +136,24 @@
 												inputmode="numeric" style="margin-bottom: 10px;"/></div>
 									</div>
 									<div class="row">
+										<div class="col-md-6" style="text-align: center;"><label class="form-label"
+												style="text-align: center;">Ürün Fiyatı</label>
+											<div class="input-group" style="margin-top: -12px;">
+												<div class="input-group-text input-group-prepend" style="height: 35px;">
+													<span class="text-white bg-primary input-group-text"
+														style="height: 30px;">₺</span></div><input
+													class="form-control form-control-sm form-control" type="text"
+													aria-label="Amount (to the nearest dollar)"
+													style="width: 180px;height: 35px;" required="" maxlength="18"
+													inputmode="numeric"/>
+												<div class="input-group-text input-group-append"
+													style="padding-left: 12px;width: 60px;height: 35px;"><input
+														class="form-control form-control-sm form-control" type="text"
+														aria-label="Amount (to the nearest dollar)" style="width: 38px;"
+														value=".00" autocomplete="on" inputmode="numeric" minlength="2"
+														maxlength="3" required=""/></div>
+											</div>
+										</div>
 										<div class="col text-center"><button
 												class="btn btn-success btn-lg fs-5 d-inline" type="button"
 												style="position: static;display: block;transform: rotate(0deg) scale(0.88);padding-top: 6px;color: var(--bs-border-color);margin-top: 10px;margin-left: 10px;">Güncelle</button>
@@ -127,8 +164,8 @@
 						</div>
 					</div>
 				</div>
-				<hr />
-				<h3 style="text-decoration:underline">Stok Takip</h3>
+				<hr/>
+				<h3>Stok Takip</h3>
 				<div class="row">
 					<div class="col-md-3 col-lg-2"></div>
 					<div class="col-md-3 col-lg-2"></div>

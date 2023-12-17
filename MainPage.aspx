@@ -130,7 +130,7 @@
                             </li>
                         </ul>
                         <div class="align-items-center list pt-3">
-                            <hr>
+                            <hr/>
                             <div class="wrapper w-100">
                                 <p class="mb-0"><a class="fw-bold text-primary" href="#">Show all <i class="mdi mdi-arrow-right ms-2"></i></a></p>
                             </div>
