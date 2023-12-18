@@ -12,12 +12,16 @@ namespace AssetManagmentSite
     using System;
     using System.Collections.Generic;
     
-    public partial class MaintenanceRecord
+    public partial class WorkflowStatu
     {
-        public int MaintenanceRecordID { get; set; }
-        public int AssetID { get; set; }
-        public System.DateTime MaintenanceDate { get; set; }
-        public string MaintenanceDetails { get; set; }
-        public Nullable<decimal> MaintenanceCost { get; set; }
+        public int WorkflowStatusID { get; set; }
+        public int WorkFlowID { get; set; }
+        public string Step { get; set; }
+        public string AssignedTo { get; set; }
+        public string Status { get; set; }
+        public Nullable<System.DateTime> StartDate { get; set; }
+        public Nullable<System.DateTime> CompletedDate { get; set; }
+    
+        public virtual Workflow Workflow { get; set; }
     }
 }

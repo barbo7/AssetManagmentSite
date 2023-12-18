@@ -13,10 +13,10 @@ namespace AssetManagmentSite
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class AssetManagementConnectionString : DbContext
+    public partial class AssetManagmentConnectionString : DbContext
     {
-        public AssetManagementConnectionString()
-            : base("name=AssetManagementConnectionString")
+        public AssetManagmentConnectionString()
+            : base("name=AssetManagmentConnectionString")
         {
         }
     
@@ -31,5 +31,8 @@ namespace AssetManagmentSite
         public virtual DbSet<Inventory> Inventories { get; set; }
         public virtual DbSet<MaintenanceRecord> MaintenanceRecords { get; set; }
         public virtual DbSet<UsageRegistration> UsageRegistrations { get; set; }
+        public virtual DbSet<Request> Requests { get; set; }
+        public virtual DbSet<Workflow> Workflows { get; set; }
+        public virtual DbSet<WorkflowStatu> WorkflowStatus { get; set; }
     }
 }

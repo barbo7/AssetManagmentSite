@@ -89,7 +89,7 @@
 														style="height: 30px;background: rgb(234,164,60);">₺</span></div>
 												<input class="form-control form-control" type="text"
 													aria-label="Amount (to the nearest dollar)"
-													style="width: 180px;height: 35px;" placeholder="Ürün fiyatı"
+													style="width: 160px;height: 35px;" placeholder="Ürün fiyatı"
 													maxlength="18" required="" inputmode="numeric"/>
 												<div class="input-group-text input-group-append"
 													style="padding-left: 12px;width: 60px;height: 35px;"><input
@@ -144,7 +144,7 @@
 														style="height: 30px;">₺</span></div><input
 													class="form-control form-control-sm form-control" type="text"
 													aria-label="Amount (to the nearest dollar)"
-													style="width: 180px;height: 35px;" required="" maxlength="18"
+													style="width: 160px;height: 35px;" required="" maxlength="18"
 													inputmode="numeric"/>
 												<div class="input-group-text input-group-append"
 													style="padding-left: 12px;width: 60px;height: 35px;"><input

@@ -17,7 +17,7 @@ namespace AssetManagmentSite
         public int ProductID { get; set; }
         public string ProductName { get; set; }
         public int ProductAmount { get; set; }
-        public int ReorderLevel { get; set; }
+        public int RecorderLevel { get; set; }
         public decimal ProductPrice { get; set; }
     }
 }

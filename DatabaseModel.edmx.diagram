@@ -4,13 +4,17 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="f42c48835980483187cda873e43fb54f" Name="Diagram1">
+      <Diagram DiagramId="cc119cc37f9b4fc496f6b4c9dbd9b5c7" Name="Diagram1">
         <EntityTypeShape EntityType="AssetManagmentModel.C__MigrationHistory" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="AssetManagmentModel.Asset" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="AssetManagmentModel.Employee" Width="1.5" PointX="0.75" PointY="3.75" IsExpanded="true" />
         <EntityTypeShape EntityType="AssetManagmentModel.Inventory" Width="1.5" PointX="2.75" PointY="3.75" IsExpanded="true" />
         <EntityTypeShape EntityType="AssetManagmentModel.MaintenanceRecord" Width="1.5" PointX="4.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="AssetManagmentModel.UsageRegistration" Width="1.5" PointX="4.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="AssetManagmentModel.UsageRegistration" Width="1.5" PointX="6.125" PointY="3.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="AssetManagmentModel.Request" Width="1.5" PointX="5.75" PointY="6.75" />
+        <EntityTypeShape EntityType="AssetManagmentModel.Workflow" Width="1.5" PointX="0.75" PointY="7.125" />
+        <EntityTypeShape EntityType="AssetManagmentModel.WorkflowStatu" Width="1.5" PointX="3" PointY="7" />
+        <AssociationConnector Association="AssetManagmentModel.FK_dbo_WorkflowStatus_dbo_Workflows_WorkFlowID" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

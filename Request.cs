@@ -12,12 +12,15 @@ namespace AssetManagmentSite
     using System;
     using System.Collections.Generic;
     
-    public partial class MaintenanceRecord
+    public partial class Request
     {
-        public int MaintenanceRecordID { get; set; }
-        public int AssetID { get; set; }
-        public System.DateTime MaintenanceDate { get; set; }
-        public string MaintenanceDetails { get; set; }
-        public Nullable<decimal> MaintenanceCost { get; set; }
+        public int RequestID { get; set; }
+        public int EmployeeID { get; set; }
+        public string RequestType { get; set; }
+        public string RequestDetails { get; set; }
+        public System.DateTime RequestDate { get; set; }
+        public string RequestStatus { get; set; }
+        public Nullable<int> ApprovedBy { get; set; }
+        public Nullable<System.DateTime> ApprovedDate { get; set; }
     }
 }
