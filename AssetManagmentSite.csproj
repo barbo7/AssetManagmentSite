@@ -109,6 +109,7 @@
     <Content Include="MainPage.aspx" />
     <Content Include="MaintenanceManagement.aspx" />
     <Content Include="PersonelManagmentPage.aspx" />
+    <Content Include="RequestsPage.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -187,6 +188,13 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Request.cs">
       <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RequestsPage.aspx.cs">
+      <DependentUpon>RequestsPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RequestsPage.aspx.designer.cs">
+      <DependentUpon>RequestsPage.aspx</DependentUpon>
     </Compile>
     <Compile Include="UsageRegistration.cs">
       <DependentUpon>DataModel.tt</DependentUpon>

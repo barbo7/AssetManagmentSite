@@ -11,7 +11,7 @@ namespace AssetManagmentSite
 {
 
 
-    public partial class AssetAssignment
+    public partial class RequestsPage
     {
     }
 }
