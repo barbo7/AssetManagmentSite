@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-    <Schema Namespace="AssetManagmentModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+      <Schema Namespace="AssetManagmentModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="__MigrationHistory">
           <Key>
             <PropertyRef Name="MigrationId" />
@@ -131,7 +131,8 @@
             <End Role="WorkflowStatus" EntitySet="WorkflowStatus" />
           </AssociationSet>
         </EntityContainer>
-      </Schema></edmx:StorageModels>
+      </Schema>
+    </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="AssetManagmentModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -173,9 +174,8 @@
           <Property Name="ProductID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="ProductName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="ProductAmount" Type="Int32" Nullable="false" />
-          <Property Name="RecorderLevel" Type="Int32" Nullable="false" />
-          <Property Name="ProductPrice" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
           <Property Name="ReorderLevel" Type="Int32" Nullable="false" />
+          <Property Name="ProductPrice" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
         </EntityType>
         <EntityType Name="MaintenanceRecord">
           <Key>
@@ -186,6 +186,19 @@
           <Property Name="MaintenanceDate" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="MaintenanceDetails" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="MaintenanceCost" Type="Decimal" Precision="18" Scale="2" />
+        </EntityType>
+        <EntityType Name="Request">
+          <Key>
+            <PropertyRef Name="RequestID" />
+          </Key>
+          <Property Name="RequestID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="EmployeeID" Type="Int32" Nullable="false" />
+          <Property Name="RequestType" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="RequestDetails" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="RequestDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="RequestStatus" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ApprovedBy" Type="Int32" />
+          <Property Name="ApprovedDate" Type="DateTime" Precision="3" />
         </EntityType>
         <EntityType Name="UsageRegistration">
           <Key>
@@ -198,44 +211,16 @@
           <Property Name="UsageDateEnd" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="UsageRegistrationStatus" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
         </EntityType>
-        <EntityContainer Name="AssetManagmentConnectionString" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="C__MigrationHistory" EntityType="Self.C__MigrationHistory" />
-          <EntitySet Name="Assets" EntityType="Self.Asset" />
-          <EntitySet Name="Employees" EntityType="Self.Employee" />
-          <EntitySet Name="Inventories" EntityType="Self.Inventory" />
-          <EntitySet Name="MaintenanceRecords" EntityType="Self.MaintenanceRecord" />
-          <EntitySet Name="UsageRegistrations" EntityType="Self.UsageRegistration" />
-          <EntitySet Name="Requests" EntityType="AssetManagmentModel.Request" />
-          <EntitySet Name="Workflows" EntityType="AssetManagmentModel.Workflow" />
-          <EntitySet Name="WorkflowStatus" EntityType="AssetManagmentModel.WorkflowStatu" />
-          <AssociationSet Name="FK_dbo_WorkflowStatus_dbo_Workflows_WorkFlowID" Association="AssetManagmentModel.FK_dbo_WorkflowStatus_dbo_Workflows_WorkFlowID">
-            <End Role="Workflow" EntitySet="Workflows" />
-            <End Role="WorkflowStatu" EntitySet="WorkflowStatus" />
-          </AssociationSet>
-        </EntityContainer>
-        <EntityType Name="Request">
-          <Key>
-            <PropertyRef Name="RequestID" />
-          </Key>
-          <Property Name="RequestID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="EmployeeID" Type="Int32" Nullable="false" />
-          <Property Name="RequestType" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Name="RequestDetails" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
-          <Property Name="RequestDate" Type="DateTime" Nullable="false" Precision="3" />
-          <Property Name="RequestStatus" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Name="ApprovedBy" Type="Int32" />
-          <Property Name="ApprovedDate" Type="DateTime" Precision="3" />
-        </EntityType>
         <EntityType Name="Workflow">
           <Key>
             <PropertyRef Name="WorkflowID" />
           </Key>
           <Property Name="WorkflowID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="WorkflowName" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Name="Description" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
-          <Property Name="RelatedDepartment" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Name="Steps" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="WorkflowStatus" Relationship="AssetManagmentModel.FK_dbo_WorkflowStatus_dbo_Workflows_WorkFlowID" FromRole="Workflow" ToRole="WorkflowStatu" />
+          <Property Name="WorkflowName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Description" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="RelatedDepartment" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Steps" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="WorkflowStatus" Relationship="Self.FK_dbo_WorkflowStatus_dbo_Workflows_WorkFlowID" FromRole="Workflows" ToRole="WorkflowStatus" />
         </EntityType>
         <EntityType Name="WorkflowStatu">
           <Key>
@@ -243,33 +228,48 @@
           </Key>
           <Property Name="WorkflowStatusID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="WorkFlowID" Type="Int32" Nullable="false" />
-          <Property Name="Step" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Step" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="AssignedTo" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Name="Status" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Status" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="StartDate" Type="DateTime" Precision="3" />
           <Property Name="CompletedDate" Type="DateTime" Precision="3" />
-          <NavigationProperty Name="Workflow" Relationship="AssetManagmentModel.FK_dbo_WorkflowStatus_dbo_Workflows_WorkFlowID" FromRole="WorkflowStatu" ToRole="Workflow" />
+          <NavigationProperty Name="Workflow" Relationship="Self.FK_dbo_WorkflowStatus_dbo_Workflows_WorkFlowID" FromRole="WorkflowStatus" ToRole="Workflows" />
         </EntityType>
         <Association Name="FK_dbo_WorkflowStatus_dbo_Workflows_WorkFlowID">
-          <End Type="AssetManagmentModel.Workflow" Role="Workflow" Multiplicity="1">
+          <End Role="Workflows" Type="Self.Workflow" Multiplicity="1">
             <OnDelete Action="Cascade" />
           </End>
-          <End Type="AssetManagmentModel.WorkflowStatu" Role="WorkflowStatu" Multiplicity="*" />
+          <End Role="WorkflowStatus" Type="Self.WorkflowStatu" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="Workflow">
+            <Principal Role="Workflows">
               <PropertyRef Name="WorkflowID" />
             </Principal>
-            <Dependent Role="WorkflowStatu">
+            <Dependent Role="WorkflowStatus">
               <PropertyRef Name="WorkFlowID" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <EntityContainer Name="AssetManagmentEntities1" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="C__MigrationHistory" EntityType="Self.C__MigrationHistory" />
+          <EntitySet Name="Assets" EntityType="Self.Asset" />
+          <EntitySet Name="Employees" EntityType="Self.Employee" />
+          <EntitySet Name="Inventories" EntityType="Self.Inventory" />
+          <EntitySet Name="MaintenanceRecords" EntityType="Self.MaintenanceRecord" />
+          <EntitySet Name="Requests" EntityType="Self.Request" />
+          <EntitySet Name="UsageRegistrations" EntityType="Self.UsageRegistration" />
+          <EntitySet Name="Workflows" EntityType="Self.Workflow" />
+          <EntitySet Name="WorkflowStatus" EntityType="Self.WorkflowStatu" />
+          <AssociationSet Name="FK_dbo_WorkflowStatus_dbo_Workflows_WorkFlowID" Association="Self.FK_dbo_WorkflowStatus_dbo_Workflows_WorkFlowID">
+            <End Role="Workflows" EntitySet="Workflows" />
+            <End Role="WorkflowStatus" EntitySet="WorkflowStatus" />
+          </AssociationSet>
+        </EntityContainer>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="AssetManagmentModelStoreContainer" CdmEntityContainer="AssetManagmentConnectionString">
+        <EntityContainerMapping StorageEntityContainer="AssetManagmentModelStoreContainer" CdmEntityContainer="AssetManagmentEntities1">
           <EntitySetMapping Name="C__MigrationHistory">
             <EntityTypeMapping TypeName="AssetManagmentModel.C__MigrationHistory">
               <MappingFragment StoreEntitySet="__MigrationHistory">
@@ -306,10 +306,10 @@
           <EntitySetMapping Name="Inventories">
             <EntityTypeMapping TypeName="AssetManagmentModel.Inventory">
               <MappingFragment StoreEntitySet="Inventory">
-                <ScalarProperty Name="ReorderLevel" ColumnName="ReorderLevel" />
                 <ScalarProperty Name="ProductID" ColumnName="ProductID" />
                 <ScalarProperty Name="ProductName" ColumnName="ProductName" />
                 <ScalarProperty Name="ProductAmount" ColumnName="ProductAmount" />
+                <ScalarProperty Name="ReorderLevel" ColumnName="ReorderLevel" />
                 <ScalarProperty Name="ProductPrice" ColumnName="ProductPrice" />
               </MappingFragment>
             </EntityTypeMapping>
@@ -325,6 +325,20 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="Requests">
+            <EntityTypeMapping TypeName="AssetManagmentModel.Request">
+              <MappingFragment StoreEntitySet="Requests">
+                <ScalarProperty Name="RequestID" ColumnName="RequestID" />
+                <ScalarProperty Name="EmployeeID" ColumnName="EmployeeID" />
+                <ScalarProperty Name="RequestType" ColumnName="RequestType" />
+                <ScalarProperty Name="RequestDetails" ColumnName="RequestDetails" />
+                <ScalarProperty Name="RequestDate" ColumnName="RequestDate" />
+                <ScalarProperty Name="RequestStatus" ColumnName="RequestStatus" />
+                <ScalarProperty Name="ApprovedBy" ColumnName="ApprovedBy" />
+                <ScalarProperty Name="ApprovedDate" ColumnName="ApprovedDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="UsageRegistrations">
             <EntityTypeMapping TypeName="AssetManagmentModel.UsageRegistration">
               <MappingFragment StoreEntitySet="UsageRegistrations">
@@ -337,41 +351,27 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="Requests">
-            <EntityTypeMapping TypeName="AssetManagmentModel.Request">
-              <MappingFragment StoreEntitySet="Requests">
-                <ScalarProperty Name="ApprovedDate" ColumnName="ApprovedDate" />
-                <ScalarProperty Name="ApprovedBy" ColumnName="ApprovedBy" />
-                <ScalarProperty Name="RequestStatus" ColumnName="RequestStatus" />
-                <ScalarProperty Name="RequestDate" ColumnName="RequestDate" />
-                <ScalarProperty Name="RequestDetails" ColumnName="RequestDetails" />
-                <ScalarProperty Name="RequestType" ColumnName="RequestType" />
-                <ScalarProperty Name="EmployeeID" ColumnName="EmployeeID" />
-                <ScalarProperty Name="RequestID" ColumnName="RequestID" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="Workflows">
             <EntityTypeMapping TypeName="AssetManagmentModel.Workflow">
               <MappingFragment StoreEntitySet="Workflows">
-                <ScalarProperty Name="Steps" ColumnName="Steps" />
-                <ScalarProperty Name="RelatedDepartment" ColumnName="RelatedDepartment" />
-                <ScalarProperty Name="Description" ColumnName="Description" />
-                <ScalarProperty Name="WorkflowName" ColumnName="WorkflowName" />
                 <ScalarProperty Name="WorkflowID" ColumnName="WorkflowID" />
+                <ScalarProperty Name="WorkflowName" ColumnName="WorkflowName" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="RelatedDepartment" ColumnName="RelatedDepartment" />
+                <ScalarProperty Name="Steps" ColumnName="Steps" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="WorkflowStatus">
             <EntityTypeMapping TypeName="AssetManagmentModel.WorkflowStatu">
               <MappingFragment StoreEntitySet="WorkflowStatus">
-                <ScalarProperty Name="CompletedDate" ColumnName="CompletedDate" />
-                <ScalarProperty Name="StartDate" ColumnName="StartDate" />
-                <ScalarProperty Name="Status" ColumnName="Status" />
-                <ScalarProperty Name="AssignedTo" ColumnName="AssignedTo" />
-                <ScalarProperty Name="Step" ColumnName="Step" />
-                <ScalarProperty Name="WorkFlowID" ColumnName="WorkFlowID" />
                 <ScalarProperty Name="WorkflowStatusID" ColumnName="WorkflowStatusID" />
+                <ScalarProperty Name="WorkFlowID" ColumnName="WorkFlowID" />
+                <ScalarProperty Name="Step" ColumnName="Step" />
+                <ScalarProperty Name="AssignedTo" ColumnName="AssignedTo" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="StartDate" ColumnName="StartDate" />
+                <ScalarProperty Name="CompletedDate" ColumnName="CompletedDate" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
