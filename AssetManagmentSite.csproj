@@ -111,6 +111,7 @@
     <Content Include="PersonelManagmentPage.aspx" />
     <Content Include="RequestsPage.aspx" />
     <Content Include="Web.config" />
+    <Content Include="WorkflowManagement.aspx" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Asset.cs">
@@ -201,6 +202,13 @@
     </Compile>
     <Compile Include="Workflow.cs">
       <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="WorkflowManagement.aspx.cs">
+      <DependentUpon>WorkflowManagement.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WorkflowManagement.aspx.designer.cs">
+      <DependentUpon>WorkflowManagement.aspx</DependentUpon>
     </Compile>
     <Compile Include="WorkflowStatu.cs">
       <DependentUpon>DataModel.tt</DependentUpon>
