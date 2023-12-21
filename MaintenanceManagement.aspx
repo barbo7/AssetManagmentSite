@@ -1,17 +1,8 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="MaintenanceManagement.aspx.cs" Inherits="AssetManagmentSite.MaintenanceManagement" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" Title="Envanter yönetim Sayfası" CodeBehind="MaintenanceManagement.aspx.cs" MasterPageFile="~/MasterPage.Master" Inherits="AssetManagmentSite.MaintenanceManagement" %>
 
-<!DOCTYPE html>
+<asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
 
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-    <meta charset="utf-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no"/>
-    <title>Envanter yönetim Sayfası</title>
-    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css"/>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i&amp;display=swap"/>
-</head>
-<body  class="text-start" style="color:rgb(124,127,145);transform:skew(0deg);">
-     <div class="container">
+     <div class="container text-start" style="color:rgb(124,127,145);transform:skew(0deg);">
         <div>
             <div class="row">
                 <div class="col-md-6"><label class="col-form-label fs-4 col-form-label" style="padding-top:50px;border-color:rgb(13,41,210);color:rgb(213,44,33);">Yaklaşan Bakım Planları</label></div>
@@ -133,6 +124,4 @@
             </form>
         </div>
     </div>
-<script src="Assets/bootstrap/js/bootstrap.min.js"></script>
-</body>
-</html>
+</asp:Content>

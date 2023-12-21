@@ -1,14 +1,7 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="MainPage.aspx.cs" Inherits="AssetManagmentSite.MainPage" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" Title="Dashboard" CodeBehind="MainPage.aspx.cs" MasterPageFile="~/MasterPage.Master" Inherits="AssetManagmentSite.MainPage" %>
 
-<!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml" data-bs-theme="light">
-<head runat="server">
-     <meta charset="utf-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no"/>
-    <title>MainPage</title>
-        <link rel="stylesheet" href="Assets/bootstrap/css/bootstrap.min.css"/>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/MaterialDesign-Webfont/3.6.95/css/materialdesignicons.min.css"/>
+<asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
 
     <style>
         @font-face {
@@ -83,10 +76,8 @@
 .bullet-line-list:last-child:after {
   display: none;
 }
-    </style>
+</style>
 
-</head>
-<body>
      <div class="container">
           <h2 class="text-center" style="margin-top: 30px;">Özet Panosu</h2>
         <div class="row text-start">
@@ -203,7 +194,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="row">
+                <div class="row" id="bildirim">
                     <div class="col">
                         <div class="card card-rounded">
                             <div class="card-body border rounded-0 border-3 shadow">
@@ -251,6 +242,4 @@
             </div>
         </div>
     </div>
-    <script src="Assets/bootstrap/js/bootstrap.min.js"></script>
-</body>
-</html>
+</asp:Content>

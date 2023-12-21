@@ -94,13 +94,13 @@
     <Content Include="AssetAssignment.aspx" />
     <Content Include="AssetManagmentPage.aspx" />
     <Content Include="Assets\bootstrap\css\bootstrap.min.css" />
-    <Content Include="Assets\bootstrap\fonts\fa-brands-400.svg" />
-    <Content Include="Assets\bootstrap\fonts\fa-regular-400.svg" />
-    <Content Include="Assets\bootstrap\fonts\fa-solid-900.svg" />
-    <Content Include="Assets\bootstrap\fonts\fontawesome-all.min.css" />
-    <Content Include="Assets\bootstrap\fonts\material-icons.min.css" />
-    <Content Include="Assets\bootstrap\fonts\MaterialIcons-Regular.svg" />
     <Content Include="Assets\bootstrap\js\bootstrap.min.js" />
+    <Content Include="Assets\fonts\fa-brands-400.svg" />
+    <Content Include="Assets\fonts\fa-regular-400.svg" />
+    <Content Include="Assets\fonts\fa-solid-900.svg" />
+    <Content Include="Assets\fonts\fontawesome-all.min.css" />
+    <Content Include="Assets\fonts\material-icons.min.css" />
+    <Content Include="Assets\fonts\MaterialIcons-Regular.svg" />
     <Content Include="DataModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>DataModel.edmx</DependentUpon>
@@ -236,22 +236,22 @@
       <DependentUpon>DataModel.edmx</DependentUpon>
     </Content>
     <Content Include="MasterPage.Master" />
-    <Content Include="Assets\bootstrap\fonts\fa-brands-400.eot" />
-    <Content Include="Assets\bootstrap\fonts\fa-brands-400.ttf" />
-    <Content Include="Assets\bootstrap\fonts\fa-brands-400.woff" />
-    <Content Include="Assets\bootstrap\fonts\fa-brands-400.woff2" />
-    <Content Include="Assets\bootstrap\fonts\fa-regular-400.eot" />
-    <Content Include="Assets\bootstrap\fonts\fa-regular-400.ttf" />
-    <Content Include="Assets\bootstrap\fonts\fa-regular-400.woff" />
-    <Content Include="Assets\bootstrap\fonts\fa-regular-400.woff2" />
-    <Content Include="Assets\bootstrap\fonts\fa-solid-900.eot" />
-    <Content Include="Assets\bootstrap\fonts\fa-solid-900.ttf" />
-    <Content Include="Assets\bootstrap\fonts\fa-solid-900.woff" />
-    <Content Include="Assets\bootstrap\fonts\fa-solid-900.woff2" />
-    <Content Include="Assets\bootstrap\fonts\MaterialIcons-Regular.eot" />
-    <Content Include="Assets\bootstrap\fonts\MaterialIcons-Regular.ttf" />
-    <Content Include="Assets\bootstrap\fonts\MaterialIcons-Regular.woff" />
-    <Content Include="Assets\bootstrap\fonts\MaterialIcons-Regular.woff2" />
+    <Content Include="Assets\fonts\fa-brands-400.eot" />
+    <Content Include="Assets\fonts\fa-brands-400.ttf" />
+    <Content Include="Assets\fonts\fa-brands-400.woff" />
+    <Content Include="Assets\fonts\fa-brands-400.woff2" />
+    <Content Include="Assets\fonts\fa-regular-400.eot" />
+    <Content Include="Assets\fonts\fa-regular-400.ttf" />
+    <Content Include="Assets\fonts\fa-regular-400.woff" />
+    <Content Include="Assets\fonts\fa-regular-400.woff2" />
+    <Content Include="Assets\fonts\fa-solid-900.eot" />
+    <Content Include="Assets\fonts\fa-solid-900.ttf" />
+    <Content Include="Assets\fonts\fa-solid-900.woff" />
+    <Content Include="Assets\fonts\fa-solid-900.woff2" />
+    <Content Include="Assets\fonts\MaterialIcons-Regular.eot" />
+    <Content Include="Assets\fonts\MaterialIcons-Regular.ttf" />
+    <Content Include="Assets\fonts\MaterialIcons-Regular.woff" />
+    <Content Include="Assets\fonts\MaterialIcons-Regular.woff2" />
     <None Include="packages.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>

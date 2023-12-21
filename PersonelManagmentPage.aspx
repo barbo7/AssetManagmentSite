@@ -1,17 +1,8 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="PersonelManagmentPage.aspx.cs" Inherits="AssetManagmentSite.PersonelManagmentPage" %>
-<!DOCTYPE html>
+﻿<%@ Page Language="C#" AutoEventWireup="true" Title="Personel Yönetim Sayfası" MasterPageFile="~/MasterPage.Master" CodeBehind="PersonelManagmentPage.aspx.cs" Inherits="AssetManagmentSite.PersonelManagmentPage" %>
 
-<html xmlns="http://www.w3.org/1999/xhtml" data-bs-theme="light">
-<head runat="server">
+<asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
 
-    <meta charset="utf-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no"/>
-    <title>Personel Yönetim Sayfası</title>
-    <link rel="stylesheet" href="Assets/bootstrap/css/bootstrap.min.css"/>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i&amp;display=swap"/>
-</head>
-<body class="text-start" style="color: rgb(124,127,145); transform: skew(0deg);">
-     <div class="container">
+     <div class="container text-start">
         <div>
             <div class="row">
                 <div class="col-md-6"><label class="col-form-label fs-4"
@@ -193,7 +184,4 @@
             </div>
         </div>
     </div>
-    
-    <script src="Assets/bootstrap/js/bootstrap.min.js"></script>
-</body>
-</html>
+</asp:Content>

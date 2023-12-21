@@ -1,19 +1,8 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="InventoryManagementPage.aspx.cs" Inherits="AssetManagmentSite.InventoryManagementPage" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" Title="Envanter Yönetimi" CodeBehind="InventoryManagementPage.aspx.cs" MasterPageFile="~/MasterPage.Master" Inherits="AssetManagmentSite.InventoryManagementPage" %>
 
-<!DOCTYPE html>
+<asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
 
-<html xmlns="http://www.w3.org/1999/xhtml"  data-bs-theme="light">
-<head runat="server">
-    <title>Envanter yönetim Sayfası</title>
-    	<meta charset="utf-8"/>
-	<meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no"/>
-	<link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css"/>
-	<link rel="stylesheet"
-		href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i&amp;display=swap"/>
-
-</head>
-<body class="text-start" style="color: rgb(124,127,145);transform: skew(0deg);">
-   <div class="container">
+   <div class="container text-start"  style="color: rgb(124,127,145);transform: skew(0deg);">
 		<div>
 			<div class="row">
 				<div class="col-md-6"><label class="col-form-label fs-4"
@@ -138,6 +127,4 @@
 			</form>
 		</div>
 	</div>
-	<script src="Assets/bootstrap/js/bootstrap.min.js"></script>
-</body>
-</html>
+</asp:Content>

@@ -1,18 +1,7 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="AssetManagmentPage.aspx.cs" Inherits="AssetManagmentSite.AssetManagmentPage" %>
+﻿<%@ Page Language="C#" Title="Varlık Yönetimi" AutoEventWireup="true" CodeBehind="AssetManagmentPage.aspx.cs" MasterPageFile="~/MasterPage.Master" Inherits="AssetManagmentSite.AssetManagmentPage" %>
 
-<!DOCTYPE html>
-
-<html xmlns="http://www.w3.org/1999/xhtml" data-bs-theme="light">
-<head runat="server">
-    <title>Varlık Yönetimi</title>
-    <meta charset="utf-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no"/>
-    <link rel="stylesheet" href="Assets/bootstrap/css/bootstrap.min.css"/>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i&amp;display=swap"/>
-
-</head>
-<body  class="text-center" style="color: rgb(124, 127, 145); transform: skew(0deg);">
-     <div class="container">
+<asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
+     <div class="container text-center" style="color: rgb(124, 127, 145); transform: skew(0deg);">
         <div>
             <div class="row">
                 <div class="col-md-6"><label class="col-form-label fs-4 col-form-label" style="padding-top:50px;border-color:rgb(13, 41, 210);color:rgb(23, 42, 162);">Alınan Varlıklar (Son 20)</label></div>
@@ -140,6 +129,4 @@
             </div>
         </div>
     </div>
-<script src="Assets/bootstrap/js/bootstrap.min.js"></script>
-</body>
-</html>
+</asp:Content>

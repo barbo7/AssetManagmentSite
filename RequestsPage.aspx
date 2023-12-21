@@ -1,15 +1,6 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="RequestsPage.aspx.cs" Inherits="AssetManagmentSite.RequestsPage" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" Title="Talep Sayfası" CodeBehind="RequestsPage.aspx.cs" MasterPageFile="~/MasterPage.Master" Inherits="AssetManagmentSite.RequestsPage" %>
+<asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
 
-<!DOCTYPE html>
-
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-     <meta charset="utf-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no"/>
-    <title>Talep Sayfası</title>
-    <link rel="stylesheet" href="Assets/bootstrap/css/bootstrap.min.css"/>
-</head>
-<body>
        <div class="container">
         <h2><span style="color:rgb(224, 14, 127);">Talep Sayfası</span></h2>
         <form id="asset-assignment-form">
@@ -63,6 +54,4 @@
             </div>
         </div>
     </div>
-    <script src="Assets/bootstrap/js/bootstrap.min.js"></script>
-</body>
-</html>
+</asp:Content>

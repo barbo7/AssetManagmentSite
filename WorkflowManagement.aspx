@@ -1,15 +1,9 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="WorkflowManagement.aspx.cs" Inherits="AssetManagmentSite.WorkflowManagement" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" Title="Görev ve Proje Yönetimi" CodeBehind="WorkflowManagement.aspx.cs" MasterPageFile="~/MasterPage.Master" Inherits="AssetManagmentSite.WorkflowManagement" %>
+<asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
 
-<!DOCTYPE html>
-
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
      <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no"/>
-    <title>Görev ve Proje Yönetimi</title>
-    <link rel="stylesheet" href="Assets/bootstrap/css/bootstrap.min.css"/>
-</head>
-<body>
+
   <div class="container">
         <h2 class="my-4"><span style="color: rgb(38, 96, 247);">İş Akışı ve Görev Yönetim</span></h2>
         <section></section>
@@ -96,5 +90,4 @@
             </div><button class="btn btn-success btn-lg" style="margin-bottom: 10px;" type="submit">Görev Ekle</button>
         </form>
     </div>
-</body>
-</html>
+</asp:Content>

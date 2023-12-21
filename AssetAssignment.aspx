@@ -1,15 +1,7 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="AssetAssignment.aspx.cs" Inherits="AssetManagmentSite.AssetAssignment" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" Title="Personel Varlık Atama ve İade Sayfası" CodeBehind="AssetAssignment.aspx.cs" MasterPageFile="~/MasterPage.Master" Inherits="AssetManagmentSite.AssetAssignment" %>
 
-<!DOCTYPE html>
+<asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
 
-<html xmlns="http://www.w3.org/1999/xhtml" data-bs-theme="light">
-<head runat="server">
-    <title>Personel Varlık Atama ve İade Sayfası</title>
-      <link rel="stylesheet" href="Assets/bootstrap/css/bootstrap.min.css"/>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i&amp;display=swap"/>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"/>
-</head>
-<body>
     <div class="container mt-4">
         <h2><span style="color: rgb(24, 127, 231);">Personel Varlık Yönetimi</span></h2>
         <div class="card mt-4">
@@ -87,6 +79,4 @@
         </div>
         <div class="card mt-4"></div>
     </div>
-    <script src="Assets/bootstrap/js/bootstrap.min.js"></script>
-</body>
-</html>
+    </asp:Content>
