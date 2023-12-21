@@ -7,7 +7,7 @@ using System.Web.UI.WebControls;
 
 namespace AssetManagmentSite
 {
-    public partial class MainPage : System.Web.UI.Page
+    public partial class MainPagee : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
