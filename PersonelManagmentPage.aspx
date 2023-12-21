@@ -72,12 +72,12 @@
                                                 placeholder="Yazılım Geliştirme Personeli" style="margin-bottom: 10px;"/>
                                         </div>
                                         <div class="col-md-6 col-lg-5 col-xxl-5"><label class="form-label">Personel
-                                                Eklenmek İstenen Detayları</label><textarea class="form-control"
+                                                Eklenmek İstenen Detayları</label><textarea runat="server" class="form-control"
                                                 placeholder="LinkedIn Hesabı, Öz geçmiş linki"
                                                 style="padding-bottom: 50px;"></textarea></div>
                                     </div>
                                     <div class="row">
-                                        <div class="col-lg-11 col-xxl-10"><button
+                                        <div class="col-lg-11 col-xxl-10"><button runat="server"
                                                 class="btn btn-primary btn-lg fs-5 float-start" type="button"
                                                 style="position: static;display: block;transform: rotate(0deg) scale(0.88);padding-top: 6px;margin-top: 0px;color: var(--bs-body-bg);background: var(--bs-btn-bg);">Kaydet</button>
                                         </div>
@@ -87,7 +87,7 @@
                                     <div class="row">
                                         <div class="col-md-6 col-lg-6 col-xl-6 col-xxl-5" style="text-align: center;">
                                             <label class="form-label">İşlem yapmak için Personel ID seçiniz</label>
-                                            <div class="dropdown"><button
+                                            <div class="dropdown"><button runat="server"
                                                     class="btn dropdown-toggle fw-normal text-center text-sm-center text-md-center link-body-emphasis border-1 border-secondary"
                                                     aria-expanded="false" data-bs-toggle="dropdown" type="button"
                                                     style="color: var(--bs-body-color);--bs-body-font-size: 0rem;--bs-body-font-weight: normal;margin-right: 0px;margin-bottom: 10px;margin-left: 0px;padding-left: 100px;padding-right: 100px;">Personel
@@ -100,7 +100,7 @@
                                         </div>
                                         <div class="col-md-6 col-lg-6 col-xl-6 col-xxl-5" style="text-align: center;">
                                             <label class="form-label">Personel Departmanı</label>
-                                            <div class="dropdown"><button
+                                            <div class="dropdown"><button runat="server"
                                                     class="btn dropdown-toggle fw-normal text-center text-sm-center text-md-center link-body-emphasis border-1 border-secondary"
                                                     aria-expanded="false" data-bs-toggle="dropdown" type="button"
                                                     style="color: var(--bs-body-color);--bs-body-font-size: 0rem;--bs-body-font-weight: normal;margin-right: 0px;margin-bottom: 10px;margin-left: 0px;padding-left: 100px;padding-right: 100px;">Department</button>
@@ -123,13 +123,13 @@
                                     </div>
                                     <div class="row">
                                         <div class="col-xxl-10"><label class="form-label">Personel
-                                                Detayları</label><textarea class="form-control"
+                                                Detayları</label><textarea runat="server" class="form-control"
                                                 style="padding-bottom: 50px;"></textarea></div>
                                     </div>
                                     <div class="row">
-                                        <div class="col text-center"><button
+                                        <div class="col text-center"><button runat="server"
                                                 class="btn btn-success btn-lg fs-5 d-inline" type="button"
-                                                style="position: static;display: block;transform: rotate(0deg) scale(0.88);padding-top: 6px;color: var(--bs-border-color);margin-top: 10px;margin-left: 10px;">Güncelle</button><button
+                                                style="position: static;display: block;transform: rotate(0deg) scale(0.88);padding-top: 6px;color: var(--bs-border-color);margin-top: 10px;margin-left: 10px;">Güncelle</button><button runat="server"
                                                 class="btn btn-danger btn-lg fs-5 d-inline" type="button"
                                                 style="position: static;display: block;transform: rotate(0deg) scale(0.88);padding-top: 6px;padding-right: 40px;padding-left: 40px;margin-top: 10px;margin-left: 50px;">Sil</button>
                                         </div>
@@ -146,7 +146,7 @@
                 <div class="card-body">
                     <h4 class="card-title">Personel varlık detayları</h4>
                     <div class="col-sm-12 col-lg-12 col-xl-11 grid-margin stretch-card">
-                        <div class="dropdown"><button
+                        <div class="dropdown"><button runat="server"
                                 class="btn dropdown-toggle fw-normal text-center text-sm-center text-md-center link-body-emphasis border-1 border-secondary"
                                 aria-expanded="false" data-bs-toggle="dropdown" type="button"
                                 style="color: var(--bs-body-color);--bs-body-font-size: 0rem;--bs-body-font-weight: normal;margin-right: 0px;margin-bottom: 10px;margin-left: 0px;padding-left: 100px;padding-right: 100px;">Personel

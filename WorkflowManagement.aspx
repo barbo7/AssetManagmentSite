@@ -10,11 +10,13 @@
         <section></section>
         <section></section>
         <section class="text-center">
-            <div class="row">
+            <div class="row" style="margin-bottom:10px">
                 <div class="col text-end">
                     <h2 class="text-start section-header"><span style="color: rgb(239, 48, 197);">Mevcut Görevlerin Son Durumları</span></h2>
                     <input runat="server" id ="SearchInputDepartment" type="search" placeholder="Departmana Göre Ara" style="background-color: white;margin-bottom: 10px;"/>
                     <div style="text-align: center;">
+                        <div class="card-body border-3 shadow border rounded-0">
+
                         <asp:GridView ID="GridViewMevcutGorevler" runat="server" CssClass="table">
                             <Columns>
                                 <asp:BoundField DataField="GorevAdi" HeaderText="Görev Adı" />
@@ -25,6 +27,7 @@
                                 <asp:BoundField DataField="TamamlanmaTarihi" HeaderText="Tamamlanma Tarihi" DataFormatString="{0:dd/MM/yyyy}" />
                             </Columns>
                         </asp:GridView>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -65,10 +68,11 @@
                     </div>
                 </div>
         </section>
-        <div class="col" style="text-align: right;">
+        <div class="col" style="text-align: right;margin-bottom:10px">
             <h2 class="text-start section-header"><span style="color: rgb(125, 132, 100);">Görev Listesi</span></h2>
-            <input runat="server" id="SearchInputGorevAra" class="form-control-sm" type="search" placeholder="Görev ara" style="background-color: white;width: 250px;text-align: center;font-size: 20px;"/>
+            <input runat="server" id="SearchInputGorevAra" class="form-control-sm" type="search" placeholder="Görev ara" style="background-color: white;margin-bottom:10px"/>
             <div style="text-align: center;">
+                <div class="card-body border-3 shadow border rounded-0">
 
                 <asp:GridView ID="GridViewGorevListesi" runat="server" CssClass="table">
                 <Columns>
@@ -79,19 +83,18 @@
                     <asp:BoundField DataField="Adimlar" HeaderText="Adımlar" />
                 </Columns>
             </asp:GridView>
+                </div>
             </div>
-
         </div>
-        <section></section>
             <h2 class="text-start section-header"><span style="color: rgb(245, 140, 16);">Görev Ekle</span></h2>
             <div class="text-start form-group"><label class="form-label" for="taskTitle">Görev Başlığı</label>
                 <input runat="server" class="form-control form-control" type="text" id="taskTitle" placeholder="Görev Adı" style="text-align: center;"/></div>
 
             <div class="text-start form-group"><label class="form-label" for="taskDescription">Açıklama</label>
-                <textarea class="form-control form-control" id="taskDescription" placeholder="Görev Açıklaması" style="height: 80.6px;text-align: center;"></textarea></div>
+                <textarea runat="server" class="form-control form-control" id="taskDescription" placeholder="Görev Açıklaması" style="height: 80.6px;text-align: center;"></textarea></div>
             
             <div class="text-start form-group"><label class="form-label" for="taskStep">Adımlar</label>
-                <textarea class="form-control form-control" id="taskSteps" placeholder="İzlenecek Adımlar(Satır Satır Giriniz Shift+Enter özelliğini kullanarak.)" style="height: 80.6px;text-align: center;"></textarea></div>
+                <textarea runat="server" class="form-control form-control" id="taskSteps" placeholder="İzlenecek Adımlar(Satır Satır Giriniz Shift+Enter özelliğini kullanarak.)" style="height: 80.6px;text-align: center;"></textarea></div>
             
             <div class="text-start form-group"><label class="form-label" for="taskStartDate">Başlangıç Tarihi</label>
                 <input runat="server" class="form-control form-control" type="date" id="taskStartDate"/></div>

@@ -70,12 +70,12 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="col text-center" style="text-align:right;"><button class="btn btn-dark btn-lg" type="button" style="margin-top:5px;">Kaydet</button></div>
+                                    <div class="col text-center" style="text-align:right;"><button runat="server" class="btn btn-dark btn-lg" type="button" style="margin-top:5px;">Kaydet</button></div>
                                 </div>
                                 <div class="tab-pane active" role="tabpanel" id="tab-2">
                                     <div class="row">
                                         <div class="col-md-6 col-lg-6 col-xl-6 col-xxl-5" style="text-align:center;"><label class="form-label form-label">İşlem yapmak için Ürün ID seçiniz</label>
-                                            <div class="dropdown"><button class="btn dropdown-toggle fw-normal text-center text-sm-center text-md-center link-body-emphasis border-1 border-secondary" aria-expanded="false" data-bs-toggle="dropdown" style="color:var(--bs-body-color);--bs-body-font-size:0rem;--bs-body-font-weight:normal;margin-right:0px;margin-bottom:10px;margin-left:0px;padding-left:100px;padding-right:100px;" type="button">Product Id</button>
+                                            <div class="dropdown"><button runat="server" class="btn dropdown-toggle fw-normal text-center text-sm-center text-md-center link-body-emphasis border-1 border-secondary" aria-expanded="false" data-bs-toggle="dropdown" style="color:var(--bs-body-color);--bs-body-font-size:0rem;--bs-body-font-weight:normal;margin-right:0px;margin-bottom:10px;margin-left:0px;padding-left:100px;padding-right:100px;" type="button">Product Id</button>
                                                 <div class="dropdown-menu"><a class="dropdown-item" href="#">First Item</a><a class="dropdown-item" href="#">Second Item</a><a class="dropdown-item" href="#">Third Item</a><a class="dropdown-item" href="#">Menu Item</a></div>
                                             </div>
                                         </div>
@@ -97,7 +97,7 @@
 													<input runat="server" class="form-control form-control-sm form-control form-control" type="text" aria-label="Amount (to the nearest dollar)" autocomplete="on" inputmode="numeric" maxlength="3" minlength="2" required="" style="width:38px;" value=".00"/></div>
                                             </div>
                                         </div>
-                                        <div class="col-xxl-5 text-end" style="text-align: right;"><button class="btn btn-success btn-lg fs-5 d-inline" type="button" style="position: static;display: block;transform: rotate(0deg) scale(0.88);padding-top: 6px;color: var(--bs-border-color);margin-top: 10px;margin-left: 10px;">Güncelle</button></div>
+                                        <div class="col-xxl-5 text-end" style="text-align: right;"><button runat="server" class="btn btn-success btn-lg fs-5 d-inline" type="button" style="position: static;display: block;transform: rotate(0deg) scale(0.88);padding-top: 6px;color: var(--bs-border-color);margin-top: 10px;margin-left: 10px;">Güncelle</button></div>
                                     </div>
                                 </div>
                             </div>

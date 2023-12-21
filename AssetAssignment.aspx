@@ -10,18 +10,18 @@
                 <form id="asset-assignment-form">
                     <div class="row" style="text-align: center;">
                         <div class="col"><label class="form-label">Personel Seçiniz</label>
-                            <div class="dropdown"><button class="btn dropdown-toggle text-center" aria-expanded="false" data-bs-toggle="dropdown" type="button" style="width: 400px;border-style: groove;border-color: var(--bs-btn-color);">Dropdown </button>
+                            <div class="dropdown"><button runat="server" class="btn dropdown-toggle text-center" aria-expanded="false" data-bs-toggle="dropdown" type="button" style="width: 400px;border-style: groove;border-color: var(--bs-btn-color);">Dropdown </button>
                                 <div class="dropdown-menu"><a class="dropdown-item" href="#">First Item</a><a class="dropdown-item" href="#">Second Item</a><a class="dropdown-item" href="#">Third Item</a></div>
                             </div>
                         </div>
                         <div class="col"><label class="form-label">Varlık Seçiniz&nbsp;</label>
-                            <div class="dropdown"><button class="btn dropdown-toggle" aria-expanded="false" data-bs-toggle="dropdown" type="button" style="width: 400px;border-style: groove;border-color: var(--bs-btn-color);">Dropdown </button>
+                            <div class="dropdown"><button runat="server" class="btn dropdown-toggle" aria-expanded="false" data-bs-toggle="dropdown" type="button" style="width: 400px;border-style: groove;border-color: var(--bs-btn-color);">Dropdown </button>
                                 <div class="dropdown-menu"><a class="dropdown-item" href="#">First Item</a><a class="dropdown-item" href="#">Second Item</a><a class="dropdown-item" href="#">Third Item</a></div>
                             </div>
                         </div>
                     </div>
                     <div class="row" style="text-align: center;">
-                        <div class="col"><label class="form-label">Açıklama</label><textarea class="form-control" style="height: 80.6px;"></textarea></div>
+                        <div class="col"><label class="form-label">Açıklama</label><textarea runat="server" class="form-control" style="height: 80.6px;"></textarea></div>
                     </div>
                     <div class="row">
                         <div class="col"><label class="form-label">Kullanıma Başlama Tarihi</label>
@@ -29,7 +29,7 @@
                     </div>
                 </form>
                 <div class="row">
-                    <div class="col"><button class="btn btn-success btn-lg" type="button" style="margin-top: 10px;">Varlık Talebi Gönder</button></div>
+                    <div class="col"><button runat="server" class="btn btn-success btn-lg" type="button" style="margin-top: 10px;">Varlık Talebi Gönder</button></div>
                 </div>
             </div>
         </div>
@@ -56,7 +56,7 @@
         <div class="card mt-4">
             <div class="card-body">
                 <h4 style="color: rgb(200,100,9);">Varlık İade / Atama Geçmişi</h4>
-                <div class="dropdown"><button class="btn dropdown-toggle" aria-expanded="false" data-bs-toggle="dropdown" type="button">Sırala</button>
+                <div class="dropdown"><button runat="server" class="btn dropdown-toggle" aria-expanded="false" data-bs-toggle="dropdown" type="button">Sırala</button>
                     <div class="dropdown-menu"><a class="dropdown-item" href="#">First Item</a><a class="dropdown-item" href="#">Second Item</a><a class="dropdown-item" href="#">Third Item</a></div>
                 </div>
                 <div>

@@ -232,7 +232,7 @@
                                     </table>
                                 </div>
                                 <div class="row">
-                                    <div class="col text-center" style="padding-top: 0px;margin-top: 20px;"><button class="btn btn-success border rounded-pill" type="button">Onayla</button><button class="btn btn-danger border rounded-pill" type="button" style="margin-left: 40px;">Reddet</button></div>
+                                    <div class="col text-center" style="padding-top: 0px;margin-top: 20px;"><button runat="server" class="btn btn-success border rounded-pill" type="button">Onayla</button><button runat="server" class="btn btn-danger border rounded-pill" type="button" style="margin-left: 40px;">Reddet</button></div>
                                 </div>
                             </div>
                         </div>

@@ -105,6 +105,24 @@ namespace AssetManagmentSite
         protected global::System.Web.UI.HtmlControls.HtmlInputText taskTitle;
 
         /// <summary>
+        /// taskDescription control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlTextArea taskDescription;
+
+        /// <summary>
+        /// taskSteps control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlTextArea taskSteps;
+
+        /// <summary>
         /// taskStartDate control.
         /// </summary>
         /// <remarks>
