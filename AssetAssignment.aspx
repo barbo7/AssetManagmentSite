@@ -25,7 +25,7 @@
                     </div>
                     <div class="row">
                         <div class="col"><label class="form-label">Kullanıma Başlama Tarihi</label>
-                            <input class="form-control" type="date" style="text-align: center;"/></div>
+                            <input runat="server" class="form-control" type="date" style="text-align: center;"/></div>
                     </div>
                 </form>
                 <div class="row">

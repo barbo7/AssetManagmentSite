@@ -209,7 +209,7 @@
                                         <thead>
                                             <tr>
                                                 <th><div class="form-check form-check-flat mt-0"><label class="form-check-label">
-                                                    <input aria-checked="false" class="form-check-input" type="checkbox"/><i class="input-helper"></i></label></div></th>
+                                                    <input runat="server" aria-checked="false" class="form-check-input" type="checkbox"/><i class="input-helper"></i></label></div></th>
                                                 <th>Personel</th>
                                                 <th>Talep Türü</th>
                                                 <th>Talep detay</th>
@@ -220,7 +220,7 @@
                                         <tbody>
                                             <tr>
                                                 <td><div class="form-check form-check-flat mt-0"><label class="form-check-label">
-                                                    <input aria-checked="false" class="form-check-input" type="checkbox"/><i class="input-helper"></i></label></div></td>
+                                                    <input runat="server" aria-checked="false" class="form-check-input" type="checkbox"/><i class="input-helper"></i></label></div></td>
                                                 <td>Bora S..</td>
                                                 <td>Talep Türü(örn Varlık,Bakım)</td>
                                                 <td>Bakım tarihi yaklaştı.</td>

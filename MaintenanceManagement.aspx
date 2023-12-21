@@ -7,7 +7,7 @@
             <div class="row">
                 <div class="col-md-6"><label class="col-form-label fs-4 col-form-label" style="padding-top:50px;border-color:rgb(13,41,210);color:rgb(213,44,33);">Yaklaşan Bakım Planları</label></div>
                 <div class="col-md-6">
-                    <input type="search" autocomplete="on" class="float-end" placeholder="Ürün Ara" style="border-color:var(--bs-body-color);padding-bottom:0px;margin-bottom:10px;margin-top:40px;"/></div>
+                    <input runat="server" type="search" autocomplete="on" class="float-end" placeholder="Ürün Ara" style="border-color:var(--bs-body-color);padding-bottom:0px;margin-bottom:10px;margin-top:40px;"/></div>
             </div>
             <div class="table-responsive">
                 <table class="table">
@@ -49,15 +49,15 @@
                             <div class="tab-content">
                                 <div class="tab-pane" role="tabpanel" id="tab-1">
                                     <div class="row">
-                                        <div class="col-md-6 col-lg-6 col-xl-6 col-xxl-5 text-center"><label class="form-label form-label">Varlık Adı</label><input class="border-secondary form-control form-control-sm form-control" type="text" inputmode="latin-name" maxlength="100" placeholder="Ürünün adı." style="margin-bottom:10px;"/></div>
-                                        <div class="col-md-6 col-lg-6 col-xl-6 col-xxl-5 text-center"><label class="form-label form-label">Bakım Tarihi</label><input class="form-control" type="date"/></div>
+                                        <div class="col-md-6 col-lg-6 col-xl-6 col-xxl-5 text-center"><label class="form-label form-label">Varlık Adı</label><input runat="server" class="border-secondary form-control form-control-sm form-control" type="text" inputmode="latin-name" maxlength="100" placeholder="Ürünün adı." style="margin-bottom:10px;"/></div>
+                                        <div class="col-md-6 col-lg-6 col-xl-6 col-xxl-5 text-center"><label class="form-label form-label">Bakım Tarihi</label><input runat="server" class="form-control" type="date"/></div>
                                     </div>
                                    <div class="row">
                                         <div class="col-md-6 col-lg-6 col-xl-6 col-xxl-5 text-center"><label class="form-label form-label">Bakım Detayları</label><textarea class="form-control"></textarea></div>
                                         <div class="col-md-6 col-xxl-5 text-center"><label class="form-label form-label">Bakım Maliyeti</label>
                                             <div class="input-group input-group-sm" style="padding-top: 0px;padding-bottom: 0px;padding-left: 0px;margin-left: -5px;margin-top: 0px;">
-                                                <div class="input-group-text input-group-text input-group-prepend" style="height: 35px;"><span class="text-white bg-primary input-group-text" style="height: 30px;background: rgb(234,164,60);">₺</span></div><input class="form-control form-control form-control" type="text" aria-label="Amount (to the nearest dollar)" inputmode="numeric" maxlength="18" placeholder="Boş bırakılabilir." style="width: 160px;height: 35px;" />
-                                                <div class="input-group-text input-group-text input-group-append" style="padding-left: 12px;width: 60px;height: 35px;"><input class="form-control form-control-sm border rounded-0 form-control form-control" type="text" aria-label="Amount (to the nearest dollar)" autocomplete="on" inputmode="numeric" maxlength="3" minlength="2"  style="width: 38px;" value=".00" /></div>
+                                                <div class="input-group-text input-group-text input-group-prepend" style="height: 35px;"><span class="text-white bg-primary input-group-text" style="height: 30px;background: rgb(234,164,60);">₺</span></div><input runat="server" class="form-control form-control form-control" type="text" aria-label="Amount (to the nearest dollar)" inputmode="numeric" maxlength="18" placeholder="Boş bırakılabilir." style="width: 160px;height: 35px;" />
+                                                <div class="input-group-text input-group-text input-group-append" style="padding-left: 12px;width: 60px;height: 35px;"><input runat="server" class="form-control form-control-sm border rounded-0 form-control form-control" type="text" aria-label="Amount (to the nearest dollar)" autocomplete="on" inputmode="numeric" maxlength="3" minlength="2"  style="width: 38px;" value=".00" /></div>
                                             </div>
                                         </div>
                                     </div>
@@ -71,18 +71,18 @@
                                             </div>
                                         </div>
                                         <div class="col-md-6 col-lg-6 col-xl-6 col-xxl-5" style="text-align:center;"><label class="form-label form-label">Varlık Adı</label>
-                                            <input class="border-secondary form-control form-control-sm form-control" type="text" inputmode="latin-name" style="margin-bottom:10px;"/></div>
+                                            <input runat="server" class="border-secondary form-control form-control-sm form-control" type="text" inputmode="latin-name" style="margin-bottom:10px;"/></div>
                                     </div>
                                     <div class="row">
-                                        <div class="col-md-6 col-lg-6 col-xl-6 col-xxl-5" style="text-align:center;"><label class="form-label form-label">Bakım Tarihi</label><input class="form-control" type="date"/></div>
+                                        <div class="col-md-6 col-lg-6 col-xl-6 col-xxl-5" style="text-align:center;"><label class="form-label form-label">Bakım Tarihi</label><input runat="server" class="form-control" type="date"/></div>
                                         <div class="col-md-6 col-lg-6 col-xl-6 col-xxl-5" style="text-align:center;"><label class="form-label form-label" style="text-align:center;">Bakım Detayları</label><textarea class="form-control"></textarea></div>
                                     </div>
                                     <div class="row">
                                         <div class="col-md-6 col-lg-6 col-xl-6 col-xxl-5 text-center"><label class="form-label form-label">Bakım Detayları</label><textarea class="form-control"></textarea></div>
                                         <div class="col-md-6 col-xxl-5 text-center"><label class="form-label form-label">Bakım Maliyeti</label>
                                             <div class="input-group input-group-sm" style="padding-top: 0px;padding-bottom: 0px;padding-left: 0px;margin-left: -5px;margin-top: 0px;">
-                                                <div class="input-group-text input-group-text input-group-prepend" style="height: 35px;"><span class="text-white bg-primary input-group-text" style="height: 30px;background: rgb(234,164,60);">₺</span></div><input class="form-control form-control form-control" type="text" aria-label="Amount (to the nearest dollar)" inputmode="numeric" maxlength="18" placeholder="Boş bırakılabilir."  style="width: 160px;height: 35px;" />
-                                                <div class="input-group-text input-group-text input-group-append" style="padding-left: 12px;width: 60px;height: 35px;"><input class="form-control form-control-sm border rounded-0 form-control form-control" type="text" aria-label="Amount (to the nearest dollar)" autocomplete="on" inputmode="numeric" maxlength="3" minlength="2"  style="width: 38px;" value=".00" /></div>
+                                                <div class="input-group-text input-group-text input-group-prepend" style="height: 35px;"><span class="text-white bg-primary input-group-text" style="height: 30px;background: rgb(234,164,60);">₺</span></div><input runat="server" class="form-control form-control form-control" type="text" aria-label="Amount (to the nearest dollar)" inputmode="numeric" maxlength="18" placeholder="Boş bırakılabilir."  style="width: 160px;height: 35px;" />
+                                                <div class="input-group-text input-group-text input-group-append" style="padding-left: 12px;width: 60px;height: 35px;"><input runat="server" class="form-control form-control-sm border rounded-0 form-control form-control" type="text" aria-label="Amount (to the nearest dollar)" autocomplete="on" inputmode="numeric" maxlength="3" minlength="2"  style="width: 38px;" value=".00" /></div>
                                             </div>
                                         </div>
                                     </div>

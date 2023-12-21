@@ -8,7 +8,7 @@
                 <div class="col-md-6"><label class="col-form-label fs-4"
                         style="padding-top: 50px;border-color: rgb(13,41,210);color: rgb(213,44,33);">Personel
                         Listesi</label></div>
-                <div class="col-md-6"><input class="float-end" type="search"
+                <div class="col-md-6"><input runat="server" class="float-end" type="search"
                         style="border-color: var(--bs-body-color);padding-bottom: 0px;margin-bottom: 10px;margin-top: 40px;"
                         placeholder="Personel Ara"/></div>
             </div>
@@ -56,18 +56,18 @@
                                 <div class="tab-pane" role="tabpanel" id="tab-1">
                                     <div class="row">
                                         <div class="col-md-6 col-lg-5 col-xl-6 col-xxl-5"><label
-                                                class="form-label">Personel Ad Soyad</label><input
+                                                class="form-label">Personel Ad Soyad</label><input runat="server"
                                                 class="border-secondary form-control form-control-sm" type="text"
                                                 placeholder="(Örn. Bora SAPANCILAR)" style="margin-bottom: 10px;"/></div>
                                         <div class="col-md-6 col-lg-5 col-xl-6 col-xxl-5"><label
-                                                class="form-label">Personel Departmanı&nbsp;</label><input
+                                                class="form-label">Personel Departmanı&nbsp;</label><input runat="server"
                                                 class="border-secondary form-control form-control-sm" type="text"
                                                 placeholder="Bilişim" inputmode="numeric" style="margin-bottom: 10px;"/>
                                         </div>
                                     </div>
                                     <div class="row">
                                         <div class="col-md-6 col-lg-5 col-xl-6 col-xxl-5"><label
-                                                class="form-label"/>Personel Rolü<input
+                                                class="form-label"/>Personel Rolü<input runat="server"
                                                 class="border-secondary form-control" type="text"
                                                 placeholder="Yazılım Geliştirme Personeli" style="margin-bottom: 10px;"/>
                                         </div>
@@ -113,11 +113,11 @@
                                     </div>
                                     <div class="row">
                                         <div class="col-md-6 col-lg-6 col-xl-6 col-xxl-5"><label
-                                                class="form-label">Personel Ad Soyad</label><input
+                                                class="form-label">Personel Ad Soyad</label><input runat="server"
                                                 class="border-secondary form-control form-control-sm" type="text"
                                                 style="margin-bottom: 10px;"/></div>
                                         <div class="col-md-6 col-lg-6 col-xl-6 col-xxl-5"><label
-                                                class="form-label">Personel Rolü</label><input
+                                                class="form-label">Personel Rolü</label><input runat="server"
                                                 class="border-secondary form-control form-control-sm" type="text"
                                                 inputmode="numeric" style="margin-bottom: 10px;"/></div>
                                     </div>
