@@ -101,6 +101,7 @@
     <Content Include="Assets\fonts\fontawesome-all.min.css" />
     <Content Include="Assets\fonts\material-icons.min.css" />
     <Content Include="Assets\fonts\MaterialIcons-Regular.svg" />
+    <Content Include="Assets\js\theme.js" />
     <Content Include="DataModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>DataModel.edmx</DependentUpon>
