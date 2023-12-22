@@ -8,13 +8,13 @@
                 <div class="col"><label class="form-label form-label">Personel Seçiniz</label>
                     <asp:DropDownList ID="DropDownListEmployee" runat="server" 
                         CssClass="form-control" 
-                        style="width: 100%; height: 50.6px; background-color: white; border: 1px solid #ced4da;">
+                        style="width: 100%; background-color: white; border: 1px solid #ced4da;">
                     </asp:DropDownList>
                 </div>
                 <div class="col"><label class="form-label form-label">Talep Türü</label>
                     <asp:DropDownList ID="DropDownListRequestType" runat="server" 
                         CssClass="form-control" 
-                        style="width: 100%; height: 50.6px; background-color: white; border: 1px solid #ced4da;">
+                        style="width: 100%;background-color: white; border: 1px solid #ced4da;">
                     </asp:DropDownList>
                 </div>
             </div>
@@ -30,7 +30,7 @@
          <h3><span style="color: rgb(9, 143, 241);">Talep Geçmişi</span></h3>
         <div class="col">
                 <div class="card-body border-3 shadow border rounded-0">
-                        <asp:GridView ID="MyGridView" runat="server" CssClass="table">
+                        <asp:GridView ID="GridViewRequests" runat="server" CssClass="table">
                         <Columns>
                         <asp:BoundField DataField="Employee" HeaderText="Personel"/>
                         <asp:BoundField DataField="RequestType" HeaderText="Talep Türü"/>

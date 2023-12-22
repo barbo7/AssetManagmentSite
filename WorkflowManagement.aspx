@@ -39,14 +39,14 @@
                <div style="text-align: center;">
                     <asp:DropDownList ID="DropDownListWorkflow" runat="server" 
                         CssClass="form-control" 
-                        style="width: 100%; height: 50.6px; background-color: white; border: 1px solid #ced4da;">
+                        style="width: 100%;background-color: white; border: 1px solid #ced4da;">
                     </asp:DropDownList>
                 </div>
                 <div class="form-group">
                     <label class="form-label" for="DropDownListWorkflowStep">Adım</label>
                     <asp:DropDownList ID="DropDownListWorkflowStep" runat="server" 
                         CssClass="form-control" 
-                        style="width: 100%; height: 50.6px; background-color: white; border: 1px solid #ced4da;">
+                        style="width: 100%;background-color: white; border: 1px solid #ced4da;">
                     </asp:DropDownList>
                 </div>
                 <div class="form-group">
@@ -102,7 +102,7 @@
             <div class="text-center form-group"><label class="form-label" for="taskAssignee">Sorumlu Ekip</label>
                 <asp:DropDownList ID="DropDownListResponsibleDepartment" runat="server" 
                     CssClass="form-control" 
-                    style="width: 100%; height: 50.6px; background-color: white; border: 1px solid #ced4da;">
+                    style="width: 100%; background-color: white; border: 1px solid #ced4da;">
                 </asp:DropDownList>
             </div><button runat="server" class="btn btn-success btn-lg" style="margin-bottom: 10px;" type="submit">Görev Ekle</button>
     </div>
