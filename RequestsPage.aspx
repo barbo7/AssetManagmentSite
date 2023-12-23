@@ -23,7 +23,7 @@
                     <textarea runat="server" id="description" class="form-control form-control" style="height:80.6px;"></textarea></div>
             </div>
             <div class="row">
-                <div class="col text-center"><button runat="server" class="btn btn-primary btn-lg" type="submit" style="margin-top:10px;">Talep İsteği Gönder</button></div>
+                <div class="col text-center"><asp:Button id="TalepGonderButton" OnClick="TalepGonderButton_Click" runat="server" class="btn btn-primary btn-lg" type="submit" style="margin-top:10px;" Text="Talep İsteği Gönder"/></div>
             </div>
 
         <div class="row">

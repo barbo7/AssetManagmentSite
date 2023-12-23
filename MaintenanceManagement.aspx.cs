@@ -13,5 +13,13 @@ namespace AssetManagmentSite
         {
 
         }
+        protected void BakimKaydiGirButton_Click(object sender, EventArgs e)
+        {
+         
+        }
+        protected void BakimBilgiGuncelleButon_Click(object sender, EventArgs e)
+        {
+            
+        }   
     }
 }

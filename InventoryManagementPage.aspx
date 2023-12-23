@@ -2,6 +2,7 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <form runat="server" id="form1">
+        <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
         <div class="container text-start" style="color: rgb(124,127,145); transform: skew(0deg);">
             <div>
                 <div class="row">
@@ -74,7 +75,7 @@
                                             </div>
                                         </div>
                                         <div class="col text-center" style="text-align: right;">
-                                            <button runat="server" class="btn btn-dark btn-lg" onclick="UrunKaydetButton_Click" type="button" style="margin-top: 5px;">Kaydet</button>
+                                            <asp:Button runat="server" class="btn btn-dark btn-lg" OnClick="UrunKaydetButton_Click" type="button" style="margin-top: 5px;" Text="Kaydet"/>
                                         </div>
                                     </div>
                                     <div class="tab-pane active" role="tabpanel" id="tab-2">
@@ -114,7 +115,7 @@
                                                 </div>
                                             </div>
                                             <div class="col-xxl-5 text-end" style="text-align: right;">
-                                                <button runat="server" class="btn btn-success btn-lg fs-5 d-inline" onclick="UrunGuncelleButton_Click" type="button" style="position: static; display: block; transform: rotate(0deg) scale(0.88); padding-top: 6px; color: var(--bs-border-color); margin-top: 10px; margin-left: 10px;">Güncelle</button>
+                                                <asp:Button runat="server" class="btn btn-success btn-lg fs-5 d-inline" OnClick="UrunGuncelleButton_Click" type="button" style="position: static; display: block; transform: rotate(0deg) scale(0.88); padding-top: 6px; color: var(--bs-border-color); margin-top: 10px; margin-left: 10px;" Text="Güncelle"/>
                                             </div>
                                             <asp:UpdateProgress runat="server"></asp:UpdateProgress>
                                         </div>

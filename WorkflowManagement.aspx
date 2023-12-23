@@ -64,7 +64,7 @@
                     <input runat="server" class="form-control form-control" type="date" id="WorkflowEndDate" style="text-align: center;"/>
                     <div class="row">
                         <div class="col" style="text-align: center;">
-                            <button runat="server" class="btn btn-warning fs-4 text-center" type="submit" style="background: rgb(255,186,7);color: rgb(255,255,255);margin-top: 10px;">Görev Güncelle</button></div>
+                            <asp:Button runat="server" OnClick="GorevGuncelleButton_Click" class="btn btn-warning fs-4 text-center" type="submit" style="background: rgb(255,186,7);color: rgb(255,255,255);margin-top: 10px;" Text="Görev Güncelle"/></div>
                     </div>
                 </div>
         </section>
@@ -104,7 +104,7 @@
                     CssClass="form-control" 
                     style="width: 100%; background-color: white; border: 1px solid #ced4da;">
                 </asp:DropDownList>
-            </div><button runat="server" class="btn btn-success btn-lg" style="margin-bottom: 10px;" type="submit">Görev Ekle</button>
+            </div><asp:Button runat="server" class="btn btn-success btn-lg" style="margin-bottom: 10px;" type="submit">Görev Ekle>
     </div>
     </form>
 </asp:Content>

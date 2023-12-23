@@ -33,6 +33,24 @@ namespace AssetManagmentSite
         protected global::System.Web.UI.HtmlControls.HtmlButton sidebarToggleTop;
 
         /// <summary>
+        /// SearchInputSayfaAra control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputText SearchInputSayfaAra;
+
+        /// <summary>
+        /// SearchSayfaAraButton control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlButton SearchSayfaAraButton;
+
+        /// <summary>
         /// MainContent control.
         /// </summary>
         /// <remarks>

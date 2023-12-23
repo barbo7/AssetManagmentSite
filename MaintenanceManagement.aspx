@@ -47,7 +47,7 @@
                                             <input runat="server" id="MaintenanceDateInput" class="form-control" type="date" />
                                         </div>
                                     </div>
-                                    <div class="row" style="margin-top=20px">
+                                    <div class="row" style="margin-top: 20px">
                                         <div class="col-md-6 col-lg-6 col-xl-6 col-xxl-5 text-center">
                                             <label class="form-label form-label">Bakım Detayları</label>
                                             <textarea runat="server" id="MaintenanceDetailsInput" class="form-control"></textarea>
@@ -64,7 +64,7 @@
                                         </div>
                                     </div>
                                     <div class="col text-center" style="text-align: right;">
-                                        <button runat="server" id="ButtonKaydet" class="btn btn-dark btn-lg" type="submit" style="margin-top: 20px;">Bakım Kayıdı Gir</button>
+                                        <asp:Button runat="server" OnClick="BakimKaydiGirButton_Click" ID="ButtonKaydet" class="btn btn-dark btn-lg" type="submit" Style="margin-top: 20px;" Text="Bakım Kayıdı Gir" />
                                     </div>
                                 </div>
                                 <div class="tab-pane active" role="tabpanel" id="tab-2">
@@ -99,11 +99,13 @@
                                                 <div class="input-group-text input-group-text input-group-text input-group-prepend" style="height: 35px;"><span class="text-white bg-primary input-group-text" style="height: 30px; background: rgb(234,164,60);">₺</span></div>
                                                 <input id="MaintenanceCostChangeInput1" class="form-control form-control form-control form-control" type="text" aria-label="Amount (to the nearest dollar)" inputmode="numeric" maxlength="18" placeholder="Boş bırakılabilir." style="width: 160px; height: 35px;" />
                                                 <div class="input-group-text input-group-text input-group-text input-group-append" style="padding-left: 12px; width: 60px; height: 35px;">
-                                                    <input id="MaintenanceCostChangeInput2" class="form-control-sm form-control border rounded-0 form-control form-control" type="text" aria-label="Amount (to the nearest dollar)" autocomplete="on" inputmode="numeric" maxlength="3" minlength="2" style="width: 38px;" value=".00" /></div>
+                                                    <input id="MaintenanceCostChangeInput2" class="form-control-sm form-control border rounded-0 form-control form-control" type="text" aria-label="Amount (to the nearest dollar)" autocomplete="on" inputmode="numeric" maxlength="3" minlength="2" style="width: 38px;" value=".00" />
+                                                </div>
                                             </div>
                                         </div>
                                         <div class="col-md-6 col-xxl-5 text-center">
-                                            <button runat="server" id="ButtonGuncelle" class="btn btn-warning btn-lg" type="button" style="margin-top: 20px;">Bakım Bilgilerini Güncelle</button></div>
+                                            <asp:Button runat="server" OnClick="BakimBilgiGuncelleButon_Click" ID="ButtonGuncelle" class="btn btn-warning btn-lg" type="button" Style="margin-top: 20px;" Text="Bakım Bilgilerini Güncelle" />
+                                        </div>
                                     </div>
 
                                 </div>

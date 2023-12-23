@@ -23,6 +23,9 @@ namespace AssetManagmentSite
                 GridViewMevcutGorevler.DataBind();
             }
         }
+        protected void GorevGuncelleButton_Click(object sender, EventArgs e)
+        {
+        }
 
     }
 }

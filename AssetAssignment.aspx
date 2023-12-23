@@ -39,7 +39,7 @@
                     </div>
                     <div class="row">
                         <div class="col">
-                            <button runat="server" onclick="VarlikEkleButton_Click" class="btn btn-success btn-lg" type="button" style="margin-top: 10px;">Varlık Talebi Gönder</button>
+                            <asp:Button runat="server" Text="Varlık Talebi Gönder" OnClick="VarlikEkleButton_Click" class="btn btn-success btn-lg" type="button" style="margin-top: 10px;" />
                         </div>
                     </div>
                 </div>

@@ -18,14 +18,14 @@
                     </div>
                 </div>
                 <div class="table-responsive">
-                    <div style="text-align: center; background-color:white" class="card-body border-3 shadow border rounded-0">
-                        <asp:GridView ID="MyGridView" runat="server" CssClass="table">
+                    <div style="text-align: center; background-color: white" class="card-body border-3 shadow border rounded-0">
+                        <asp:GridView ID="GridViewPersonelList" runat="server" CssClass="table" AutoGenerateColumns="false">
                             <Columns>
-                                <asp:BoundField DataField="PersonelId" HeaderText="Personel ID" />
-                                <asp:BoundField DataField="NameSurname" HeaderText="Ad Soyad" />
-                                <asp:BoundField DataField="Department" HeaderText="Departmanı" />
-                                <asp:BoundField DataField="Role" HeaderText="Rolü" />
-                                <asp:BoundField DataField="ApprovedDate" HeaderText="Personel Detayları" />
+                                <asp:BoundField DataField="EmployeeID" HeaderText="Personel ID" />
+                                <asp:BoundField DataField="EmployeeName" HeaderText="Ad Soyad" />
+                                <asp:BoundField DataField="EmployeeDepartment" HeaderText="Departmanı" />
+                                <asp:BoundField DataField="EmployeeRole" HeaderText="Rolü" />
+                                <asp:BoundField DataField="EmployeeDetails" HeaderText="Personel Detayları" />
                             </Columns>
                         </asp:GridView>
                     </div>
@@ -51,9 +51,10 @@
                                         <div class="col-md-6 col-lg-5 col-xl-6 col-xxl-5">
                                             <label
                                                 class="form-label">
-                                                Personel Ad Soyad</label><input runat="server"
-                                                    class="border-secondary form-control form-control-sm" id="NameSurnameInput" type="text"
-                                                    placeholder="(Örn. Bora SAPANCILAR)" style="margin-bottom: 10px;" />
+                                                Personel Ad Soyad</label>
+                                            <input runat="server"
+                                                class="border-secondary form-control form-control-sm" id="NameSurnameInput" type="text"
+                                                placeholder="(Örn. Bora SAPANCILAR)" style="margin-bottom: 10px;" />
                                         </div>
                                         <div class="col-md-6 col-lg-5 col-xl-6 col-xxl-5">
                                             <label
@@ -76,10 +77,13 @@
 
                                     <div class="row">
                                         <div class="col-lg-11 col-xxl-10">
-                                            <button runat="server"
-                                                class="btn btn-primary btn-lg fs-5 float-start" type="submit"
-                                                style="position: static; display: block; transform: rotate(0deg) scale(0.88); padding-top: 6px; margin-top: 0px; color: var(--bs-body-bg); background: var(--bs-btn-bg);">
-                                                Kaydet</button>
+                                            <div class="col-lg-11 col-xxl-10">
+                                                <asp:Button runat="server" OnClick="ButtonEkle_Click"
+                                                    CssClass="btn btn-primary btn-lg fs-5 float-start"
+                                                    Text="Kaydet"
+                                                    Style="position: static; display: block; transform: rotate(0deg) scale(0.88); padding-top: 6px; margin-top: 0px; color: var(--bs-body-bg); background: var(--bs-btn-bg);" />
+                                            </div>
+
                                         </div>
                                     </div>
                                 </div>
@@ -127,14 +131,12 @@
                                     </div>
                                     <div class="row">
                                         <div class="col text-center">
-                                            <button runat="server"
+                                            <asp:Button runat="server" Text="Güncelle"
                                                 class="btn btn-success btn-lg fs-5 d-inline" type="submit" id="ButtonGuncelle"
-                                                style="position: static; display: block; transform: rotate(0deg) scale(0.88); padding-top: 6px; color: var(--bs-border-color); margin-top: 10px; margin-left: 10px;">
-                                                Güncelle</button>
-                                            <button runat="server"
+                                                style="position: static; display: block; transform: rotate(0deg) scale(0.88); padding-top: 6px; color: var(--bs-border-color); margin-top: 10px; margin-left: 10px;"/>
+                                            <asp:Button runat="server" Text="Sil"
                                                 class="btn btn-danger btn-lg fs-5 d-inline" type="submit" id="ButtonSil"
-                                                style="position: static; display: block; transform: rotate(0deg) scale(0.88); padding-top: 6px; padding-right: 40px; padding-left: 40px; margin-top: 10px; margin-left: 50px;">
-                                                Sil</button>
+                                                style="position: static; display: block; transform: rotate(0deg) scale(0.88); padding-top: 6px; padding-right: 40px; padding-left: 40px; margin-top: 10px; margin-left: 50px;"/>
                                         </div>
                                     </div>
                                 </div>

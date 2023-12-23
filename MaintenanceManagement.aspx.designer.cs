@@ -84,7 +84,7 @@ namespace AssetManagmentSite
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlButton ButtonKaydet;
+        protected global::System.Web.UI.WebControls.Button ButtonKaydet;
 
         /// <summary>
         /// DropDownListProductId control.
@@ -129,7 +129,7 @@ namespace AssetManagmentSite
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlButton ButtonGuncelle;
+        protected global::System.Web.UI.WebControls.Button ButtonGuncelle;
 
         /// <summary>
         /// GridViewMaintenanceTable2 control.

@@ -103,7 +103,7 @@
                         <div class="card-body border rounded-0 border-3 shadow card-rounded" style="border-radius: 0;">
                             <h4 class="card-title card-title-dash text-center">İş Akışı</h4>
                             <div style="text-align: center;" class="card-body border-3 shadow border rounded-0">
-                                <asp:GridView ID="GridViewWorkflow" runat="server" CssClass="table"  AutoGenerateColumns="false">
+                                <asp:GridView ID="GridViewWorkflow" runat="server" CssClass="table" AutoGenerateColumns="false">
                                     <Columns>
                                         <asp:BoundField DataField="RelatedDepartment" HeaderText="İlişkili Departman" />
                                         <asp:BoundField DataField="Step" HeaderText="Mevcut Adım" />
@@ -226,9 +226,9 @@
                                     </asp:GridView>
                                     <div class="row">
                                         <div class="col text-center" style="padding-top: 0px; margin-top: 20px;">
-                                            <asp:Button ID="btn_onayla" class="btn btn-success border rounded-pill" runat="server" OnClick="btn_onayla_Click" Text="Button" />
+                                            <asp:Button ID="btn_onayla" class="btn btn-success border rounded-pill" runat="server" OnClick="btn_onayla_Click" Text="Onayla" />
 
-                                            <button runat="server" class="btn btn-danger border rounded-pill" type="button" onclick="btn_reddet_Click" style="margin-left: 20px;">Reddet</button>
+                                            <asp:Button runat="server" class="btn btn-danger border rounded-pill" type="button" OnClick="btn_reddet_Click" Style="margin-left: 20px;" Text="Reddet" />
                                         </div>
                                     </div>
                                 </div>

@@ -80,7 +80,7 @@
                                     </div>
                                     <div class="row">
                                         <div class="col">
-                                            <button runat="server" onclick="VarlikKaydetButton_Click" class="btn btn-success btn-lg fs-5 float-start" type="button" style="position: static; display: block; transform: rotate(0deg) scale(0.88); padding-top: 6px; margin-top: 0px; color: var(--bs-body-bg); background: rgb(27, 188, 63);">Kaydet</button>
+                                            <asp:Button runat="server" OnClick="VarlikKaydetButton_Click" class="btn btn-success btn-lg fs-5 float-start" type="button" Style="position: static; display: block; transform: rotate(0deg) scale(0.88); padding-top: 6px; margin-top: 0px; color: var(--bs-body-bg); background: rgb(27, 188, 63);" Text="Kaydet" />
                                         </div>
                                     </div>
                                 </div>
@@ -131,8 +131,8 @@
                                     </div>
                                     <div class="row">
                                         <div class="col" style="text-align: center;">
-                                            <button runat="server" onclick="GuncelleButton_Click" class="btn btn-warning btn-lg fs-5 d-inline" type="button" style="position: static; display: block; transform: rotate(0deg) scale(0.88); padding-top: 6px; margin-top: 0px; color: var(--bs-btn-color);">Güncelle</button>
-                                            <button runat="server" onclick="SilButton_Click" class="btn btn-danger btn-lg fs-5 d-inline" type="button" style="position: static; display: block; transform: rotate(0deg) scale(0.88); padding-top: 6px; margin-top: 0px; padding-right: 40px; padding-left: 40px;">Sil</button>
+                                            <asp:Button runat="server" OnClick="GuncelleButton_Click" class="btn btn-warning btn-lg fs-5 d-inline" type="button" Style="position: static; display: block; transform: rotate(0deg) scale(0.88); padding-top: 6px; margin-top: 0px; color: var(--bs-btn-color);" Text="Güncelle" />
+                                            <asp:Button runat="server" OnClick="SilButton_Click" class="btn btn-danger btn-lg fs-5 d-inline" type="button" Style="position: static; display: block; transform: rotate(0deg) scale(0.88); padding-top: 6px; margin-top: 0px; padding-right: 40px; padding-left: 40px;" Text="Sil"/>
                                         </div>
                                     </div>
                                 </div>
@@ -147,13 +147,13 @@
                         <h4 class="card-title">Bakım Kayıtları</h4>
                         <div class="table-responsive" style="text-align: center;">
                             <div style="text-align: center;" class="card-body border-3 shadow border rounded-0">
-                                <asp:GridView ID="GridViewVarliklarBakimListesi" runat="server" CssClass="table">
+                                <asp:GridView ID="GridViewVarliklarBakimListesi" runat="server" CssClass="table" AutoGenerateColumns="false">
                                     <Columns>
                                         <asp:BoundField DataField="AssetName" HeaderText="Varlık Adı" />
                                         <asp:BoundField DataField="EmployeeName" HeaderText="Kullanan Personel" />
                                         <asp:BoundField DataField="MaintenanceDate" HeaderText="Bakım Tarihi" DataFormatString="{0:dd/MM/yyyy}" />
                                         <asp:BoundField DataField="MaintenanceDetails" HeaderText="Bakım Detaylar" />
-                                        <asp:BoundField DataField="MaintenanceCost" HeaderText="Bakım Maliyeti"  />
+                                        <asp:BoundField DataField="MaintenanceCost" HeaderText="Bakım Maliyeti" />
                                     </Columns>
                                 </asp:GridView>
                             </div>

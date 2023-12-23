@@ -24,13 +24,13 @@ namespace AssetManagmentSite
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
 
         /// <summary>
-        /// MyGridView control.
+        /// GridViewPersonelList control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView MyGridView;
+        protected global::System.Web.UI.WebControls.GridView GridViewPersonelList;
 
         /// <summary>
         /// NameSurnameInput control.
@@ -120,7 +120,7 @@ namespace AssetManagmentSite
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlButton ButtonGuncelle;
+        protected global::System.Web.UI.WebControls.Button ButtonGuncelle;
 
         /// <summary>
         /// ButtonSil control.
@@ -129,7 +129,7 @@ namespace AssetManagmentSite
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlButton ButtonSil;
+        protected global::System.Web.UI.WebControls.Button ButtonSil;
 
         /// <summary>
         /// DropDownListPersonel control.
