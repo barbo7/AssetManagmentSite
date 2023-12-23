@@ -13,5 +13,9 @@ namespace AssetManagmentSite
         {
 
         }
+        protected void VarlikKaydetButton_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

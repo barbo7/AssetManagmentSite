@@ -13,5 +13,12 @@ namespace AssetManagmentSite
         {
 
         }
+        protected void UrunGuncelleButton_Click(object sender, EventArgs e)
+        {
+        }
+        protected void UrunEkleButton_Click(object sender, EventArgs e)
+        {
+           
+        }
     }
 }

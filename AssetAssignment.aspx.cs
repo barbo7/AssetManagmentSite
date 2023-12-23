@@ -13,5 +13,9 @@ namespace AssetManagmentSite
         {
 
         }
+        protected void VarlikEkleButton_Click(object sender, EventArgs e)
+        {
+           
+        }
     }
 }
