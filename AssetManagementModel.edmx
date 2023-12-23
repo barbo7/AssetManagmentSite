@@ -22,9 +22,9 @@
           <Property Name="AssetID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="AssetName" Type="nvarchar" MaxLength="100" Nullable="false" />
           <Property Name="AssetBoughtDate" Type="datetime" Nullable="false" />
-          <Property Name="AssetPrice" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="AssetPrice" Type="decimal" Precision="18" Scale="2" />
           <Property Name="AssetStatus" Type="nvarchar" MaxLength="50" Nullable="false" />
-          <Property Name="AssetLocation" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="AssetLocation" Type="nvarchar" MaxLength="100" />
         </EntityType>
         <EntityType Name="Employees">
           <Key>
@@ -63,7 +63,7 @@
           <Property Name="RequestID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="EmployeeID" Type="int" Nullable="false" />
           <Property Name="RequestType" Type="nvarchar" MaxLength="100" Nullable="false" />
-          <Property Name="RequestDetails" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="RequestDetails" Type="nvarchar" MaxLength="255" />
           <Property Name="RequestDate" Type="datetime" Nullable="false" />
           <Property Name="RequestStatus" Type="nvarchar" MaxLength="100" Nullable="false" />
           <Property Name="ApprovedBy" Type="int" />
@@ -153,9 +153,9 @@
           <Property Name="AssetID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="AssetName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="AssetBoughtDate" Type="DateTime" Nullable="false" Precision="3" />
-          <Property Name="AssetPrice" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="AssetPrice" Type="Decimal" Precision="18" Scale="2" />
           <Property Name="AssetStatus" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="AssetLocation" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="AssetLocation" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="Employee">
           <Key>
@@ -194,7 +194,7 @@
           <Property Name="RequestID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="EmployeeID" Type="Int32" Nullable="false" />
           <Property Name="RequestType" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="RequestDetails" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="RequestDetails" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
           <Property Name="RequestDate" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="RequestStatus" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="ApprovedBy" Type="Int32" />
@@ -249,7 +249,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="AssetManagmentEntities1" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="AssetManagmentEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="C__MigrationHistory" EntityType="Self.C__MigrationHistory" />
           <EntitySet Name="Assets" EntityType="Self.Asset" />
           <EntitySet Name="Employees" EntityType="Self.Employee" />
@@ -269,7 +269,7 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="AssetManagmentModelStoreContainer" CdmEntityContainer="AssetManagmentEntities1">
+        <EntityContainerMapping StorageEntityContainer="AssetManagmentModelStoreContainer" CdmEntityContainer="AssetManagmentEntities">
           <EntitySetMapping Name="C__MigrationHistory">
             <EntityTypeMapping TypeName="AssetManagmentModel.C__MigrationHistory">
               <MappingFragment StoreEntitySet="__MigrationHistory">

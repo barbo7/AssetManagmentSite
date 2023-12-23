@@ -13,10 +13,10 @@ namespace AssetManagmentSite
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class AssetManagmentEntities1 : DbContext
+    public partial class AssetManagmentEntities : DbContext
     {
-        public AssetManagmentEntities1()
-            : base("name=AssetManagmentEntities1")
+        public AssetManagmentEntities()
+            : base("name=AssetManagmentEntities")
         {
         }
     

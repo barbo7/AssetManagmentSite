@@ -17,7 +17,7 @@ namespace AssetManagmentSite
         public int AssetID { get; set; }
         public string AssetName { get; set; }
         public System.DateTime AssetBoughtDate { get; set; }
-        public decimal AssetPrice { get; set; }
+        public Nullable<decimal> AssetPrice { get; set; }
         public string AssetStatus { get; set; }
         public string AssetLocation { get; set; }
     }
