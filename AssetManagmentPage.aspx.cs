@@ -17,5 +17,13 @@ namespace AssetManagmentSite
         {
 
         }
+        protected void GuncelleButton_Click(object sender, EventArgs e)
+        {
+
+        }
+        protected void SilButton_Click(object sender, EventArgs e)
+        {
+
+        }   
     }
 }

@@ -26,6 +26,9 @@ namespace AssetManagmentSite
         protected void GorevGuncelleButton_Click(object sender, EventArgs e)
         {
         }
+        protected void WorkflowEkleButton_Click(object sender, EventArgs e)
+        {
+        }
 
     }
 }

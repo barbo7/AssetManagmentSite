@@ -104,7 +104,7 @@
                     CssClass="form-control" 
                     style="width: 100%; background-color: white; border: 1px solid #ced4da;">
                 </asp:DropDownList>
-            </div><asp:Button runat="server" class="btn btn-success btn-lg" style="margin-bottom: 10px;" type="submit">Görev Ekle>
+            </div><asp:Button runat="server" OnClick="WorkflowEkleButton_Click" Text="Görev Ekle" class="btn btn-success btn-lg" style="margin-bottom: 10px;" type="submit"/>
     </div>
     </form>
 </asp:Content>

@@ -121,5 +121,8 @@ namespace AssetManagmentSite
                 }
             }
         }
+        protected void btn_reddet_Click(object sender, EventArgs e)
+        {
+        }
     }
 }

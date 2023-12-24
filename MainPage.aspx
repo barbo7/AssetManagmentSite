@@ -228,7 +228,7 @@
                                         <div class="col text-center" style="padding-top: 0px; margin-top: 20px;">
                                             <asp:Button ID="btn_onayla" class="btn btn-success border rounded-pill" runat="server" OnClick="btn_onayla_Click" Text="Onayla" />
 
-                                            <asp:Button runat="server" class="btn btn-danger border rounded-pill" type="button" OnClick="btn_reddet_Click" Style="margin-left: 20px;" Text="Reddet" />
+                                            <asp:Button ID="btn_reddet" runat="server" class="btn btn-danger border rounded-pill" type="button" OnClick="btn_reddet_Click" Style="margin-left: 20px;" Text="Reddet" />
                                         </div>
                                     </div>
                                 </div>

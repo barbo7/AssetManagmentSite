@@ -20,5 +20,9 @@ namespace AssetManagmentSite
         {
            
         }
+        protected void UrunKaydetButton_Click(object sender, EventArgs e)
+        {
+            
+        }
     }
 }

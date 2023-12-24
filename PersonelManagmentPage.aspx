@@ -1,7 +1,8 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" Title="Personel Yönetim Sayfası" MasterPageFile="~/MasterPage.Master" CodeBehind="PersonelManagmentPage.aspx.cs" Inherits="AssetManagmentSite.PersonelManagmentPage" %>
+﻿<%@ Page Async="true" Language="C#" AutoEventWireup="true" Title="Personel Yönetim Sayfası" MasterPageFile="~/MasterPage.Master" CodeBehind="PersonelManagmentPage.aspx.cs" Inherits="AssetManagmentSite.PersonelManagmentPage" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <form runat="server" id="form1" class="border rounded-0 shadow-sm">
+        <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
         <div class="container text-start">
             <div>
                 <div class="row">
@@ -12,27 +13,41 @@
                         Listesi</label>
                     </div>
                     <div class="col-md-6">
-                        <input runat="server" class="float-end" type="search"
+                        <input id="SearchInput" runat="server" class="float-end" type="search" onkeyup="SearchChanged()"
                             style="border-color: var(--bs-body-color); padding-bottom: 0px; margin-bottom: 10px; margin-top: 40px;"
                             placeholder="Personel Ara" />
                     </div>
                 </div>
-                <div class="table-responsive">
-                    <div style="text-align: center; background-color: white" class="card-body border-3 shadow border rounded-0">
-                        <asp:GridView ID="GridViewPersonelList" runat="server" CssClass="table" AutoGenerateColumns="false">
-                            <Columns>
-                                <asp:BoundField DataField="EmployeeID" HeaderText="Personel ID" />
-                                <asp:BoundField DataField="EmployeeName" HeaderText="Ad Soyad" />
-                                <asp:BoundField DataField="EmployeeDepartment" HeaderText="Departmanı" />
-                                <asp:BoundField DataField="EmployeeRole" HeaderText="Rolü" />
-                                <asp:BoundField DataField="EmployeeDetails" HeaderText="Personel Detayları" />
-                            </Columns>
-                        </asp:GridView>
-                    </div>
-                </div>
+                <asp:UpdatePanel ID="UpdatePanel1" runat="server">
+                    <%--GridView'i bir UpdatePanel içine koyun. Bu, AJAX postback sırasında sadece GridView'in güncellenmesini sağlayacaktır.--%>
+                    <ContentTemplate>
+                        <div class="table-responsive">
+                            <div style="text-align: center; background-color: white" class="card-body border-3 shadow border rounded-0">
+                                <asp:GridView ID="GridViewPersonelList" runat="server" CssClass="table" AutoGenerateColumns="false">
+                                    <Columns>
+                                        <asp:BoundField DataField="EmployeeID" HeaderText="Personel ID" />
+                                        <asp:BoundField DataField="EmployeeName" HeaderText="Ad Soyad" />
+                                        <asp:BoundField DataField="EmployeeDepartment" HeaderText="Departmanı" />
+                                        <asp:BoundField DataField="EmployeeRole" HeaderText="Rolü" />
+                                        <asp:BoundField DataField="EmployeeDetails" HeaderText="Personel Detayları" />
+                                    </Columns>
+                                </asp:GridView>
+                            </div>
+                        </div>
+                    </ContentTemplate>
+                </asp:UpdatePanel>
+                <script type="text/javascript">
+                    function SearchChanged() {
+                        __doPostBack('SearchInput', '');
+                    }
+                </script>
                 <hr />
             </div>
             <div>
+                <div id="SuccessMessage" runat="server" visible="false" class="alert alert-success" role="alert"><span id="SuccessMessageText" runat="server">Başarıyla Eklendi! </span></div>
+                <div id="UnsuccesfullyMessage" runat="server" visible="false" class="alert alert-primary" role="alert"><span id="UnsuccesfullyMessageText" runat="server">Eklenemedi! </span></div>
+                <div id="UpdatedAlert" runat="server" visible="false" class="alert alert-warning" role="alert"><span id="UpdatedAlertText" runat="server">Personel Bilgileri Değişti! </span></div>
+                <div id="DeletedAlert" runat="server" visible="false" class="alert alert-danger" role="alert"><span id="DeletedAlertText" runat="server">Personel Silindi! </span></div>
                 <div class="row">
                     <div class="col-md-12 col-lg-12 col-xl-12">
                         <h4 class="text-start" style="color: var(--bs-primary-text-emphasis);">Personel İşlemleri</h4>
@@ -45,8 +60,10 @@
                                     data-bs-toggle="tab" href="#tab-2" style="color: rgb(210,155,15);">Personel Veri
                                         Güncelle</a></li>
                             </ul>
+
                             <div class="tab-content">
                                 <div class="tab-pane" role="tabpanel" id="tab-1">
+
                                     <div class="row">
                                         <div class="col-md-6 col-lg-5 col-xl-6 col-xxl-5">
                                             <label
@@ -89,20 +106,26 @@
                                 </div>
 
                                 <div class="tab-pane active" role="tabpanel" id="tab-2">
+
                                     <div class="row">
                                         <div class="col-md-6 col-lg-6 col-xl-6 col-xxl-5" style="text-align: center;">
-                                            <label class="form-label">İşlem yapmak için Personel ID seçiniz</label>
+                                            <label class="form-label">İşlem yapmak için Personel seçiniz</label>
                                             <asp:DropDownList ID="DropDownListPersonelId" runat="server"
                                                 CssClass="form-control"
+                                                AutoPostBack="true"
+                                                OnSelectedIndexChanged="PersonelIdDDL_SelectedIndexChanged"
                                                 Style="width: 100%; background-color: white; border: 1px solid #ced4da;">
                                             </asp:DropDownList>
+
                                         </div>
                                         <div class="col-md-6 col-lg-6 col-xl-6 col-xxl-5" style="text-align: center;">
                                             <label class="form-label">Personel Departmanı</label>
-                                            <asp:DropDownList ID="DropDownListPersonelDepartments" runat="server"
+                                            <asp:TextBox ID="PersonelDepartmanChangeInput" runat="server" CssClass="form-control"></asp:TextBox>
+
+                                            <%--<asp:DropDownList ID="DropDownListPersonelDepartments" runat="server"
                                                 CssClass="form-control"
                                                 Style="width: 100%; background-color: white; border: 1px solid #ced4da;">
-                                            </asp:DropDownList>
+                                            </asp:DropDownList>--%>
                                         </div>
                                     </div>
                                     <div class="row">
@@ -131,12 +154,12 @@
                                     </div>
                                     <div class="row">
                                         <div class="col text-center">
-                                            <asp:Button runat="server" Text="Güncelle"
-                                                class="btn btn-success btn-lg fs-5 d-inline" type="submit" id="ButtonGuncelle"
-                                                style="position: static; display: block; transform: rotate(0deg) scale(0.88); padding-top: 6px; color: var(--bs-border-color); margin-top: 10px; margin-left: 10px;"/>
-                                            <asp:Button runat="server" Text="Sil"
-                                                class="btn btn-danger btn-lg fs-5 d-inline" type="submit" id="ButtonSil"
-                                                style="position: static; display: block; transform: rotate(0deg) scale(0.88); padding-top: 6px; padding-right: 40px; padding-left: 40px; margin-top: 10px; margin-left: 50px;"/>
+                                            <asp:Button runat="server" Text="Güncelle" OnClick="ButtonGuncelle_Click"
+                                                class="btn btn-success btn-lg fs-5 d-inline" type="submit" ID="ButtonGuncelle"
+                                                Style="position: static; display: block; transform: rotate(0deg) scale(0.88); padding-top: 6px; color: var(--bs-border-color); margin-top: 10px; margin-left: 10px;" />
+                                            <asp:Button runat="server" Text="Sil" OnClick="ButtonSil_Click"
+                                                class="btn btn-danger btn-lg fs-5 d-inline" type="submit" ID="ButtonSil"
+                                                Style="position: static; display: block; transform: rotate(0deg) scale(0.88); padding-top: 6px; padding-right: 40px; padding-left: 40px; margin-top: 10px; margin-left: 50px;" />
                                         </div>
                                     </div>
                                 </div>
@@ -146,6 +169,7 @@
                 </div>
             </div>
             <div>
+                <div id="PersonelAraAlert" runat="server" visible="false" class="alert alert-dismissible" role="alert"><span id="PersonelAraText" runat="server">Lütfen Mevcut Bir Personel Seçiniz! </span></div>
                 <div class="card">
                     <div class="card-body">
                         <h4 class="card-title">Personel varlık detayları</h4>
