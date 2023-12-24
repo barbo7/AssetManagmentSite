@@ -3,6 +3,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <form runat="server" id="form1" class="border rounded-0 shadow-sm">
         <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
+
         <div class="container text-start">
             <div>
                 <div class="row">
@@ -53,16 +54,16 @@
                         <h4 class="text-start" style="color: var(--bs-primary-text-emphasis);">Personel İşlemleri</h4>
                         <div>
                             <ul class="nav nav-tabs" role="tablist">
-                                <li class="nav-item" role="presentation"><a class="nav-link" role="tab"
+                                <li class="nav-item" role="presentation"><a class="nav-link active" role="tab"
                                     data-bs-toggle="tab" href="#tab-1" style="color: rgb(92,220,33);">Personel
                                         Ekle</a></li>
-                                <li class="nav-item" role="presentation"><a class="nav-link active" role="tab"
+                                <li class="nav-item" role="presentation"><a class="nav-link" role="tab"
                                     data-bs-toggle="tab" href="#tab-2" style="color: rgb(210,155,15);">Personel Veri
                                         Güncelle</a></li>
                             </ul>
 
                             <div class="tab-content">
-                                <div class="tab-pane" role="tabpanel" id="tab-1">
+                                <div class="tab-pane active" role="tabpanel" id="tab-1">
 
                                     <div class="row">
                                         <div class="col-md-6 col-lg-5 col-xl-6 col-xxl-5">
@@ -105,7 +106,7 @@
                                     </div>
                                 </div>
 
-                                <div class="tab-pane active" role="tabpanel" id="tab-2">
+                                <div class="tab-pane" role="tabpanel" id="tab-2">
 
                                     <div class="row">
                                         <div class="col-md-6 col-lg-6 col-xl-6 col-xxl-5" style="text-align: center;">

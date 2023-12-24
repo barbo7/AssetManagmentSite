@@ -13,6 +13,7 @@ namespace AssetManagmentSite
     public partial class PersonelManagmentPage : System.Web.UI.Page
     {
         AssetManagmentEntities entities = new AssetManagmentEntities();
+        Transactions transactions = new Transactions();
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -53,7 +54,7 @@ namespace AssetManagmentSite
         protected async void ButtonEkle_Click(object sender, EventArgs e)
         {
             bool empNameDuplicate = entities.Employees.Any(x => x.EmployeeName == NameSurnameInput.Value);
-            if (NameSurnameInput.Value == "" || EmployeeDepartmentInput.Value == "" || EmployeeRoleInput.Value == "" || DetailsInput.Value == "" || empNameDuplicate)
+            if (NameSurnameInput.Value == "" || EmployeeDepartmentInput.Value == "" || EmployeeRoleInput.Value == "" ||  empNameDuplicate)
             {
 
                 if (empNameDuplicate)
@@ -63,7 +64,8 @@ namespace AssetManagmentSite
                 UnsuccesfullyMessage.InnerText = "Personel Eklenemedi.";
 
                 UnsuccesfullyMessage.Visible = true;
-                ShowAfterDelete(UnsuccesfullyMessage);
+
+                transactions.ShowAfterDelete(UnsuccesfullyMessage,this);
                 return;
             }
             try
@@ -85,7 +87,7 @@ namespace AssetManagmentSite
             {
                 UnsuccesfullyMessageText.InnerText = "Personel Eklenemedi.";
                 UnsuccesfullyMessage.Visible = true;
-                ShowAfterDelete(UnsuccesfullyMessage);
+                transactions.ShowAfterDelete(UnsuccesfullyMessage, this);
 
             }
             finally
@@ -94,21 +96,16 @@ namespace AssetManagmentSite
                 if (UnsuccesfullyMessage.Visible)
                 {
                     SuccessMessage.Visible = false;
-                    ShowAfterDelete(UnsuccesfullyMessage);
+                    transactions.ShowAfterDelete(UnsuccesfullyMessage, this);
                 }
 
-                ShowAfterDelete(SuccessMessage);
+                transactions.ShowAfterDelete(SuccessMessage, this);
                 VeriKaldir();
 
             }
         }
 
-        private void ShowAfterDelete(HtmlGenericControl Alert)
-        {
-            string script = "setTimeout(function() { document.getElementById('" + Alert.ClientID + "').style.display = 'none'; }, 5000);";
-            ScriptManager.RegisterStartupScript(this, this.GetType(), "HideAlert", script, true);
-        }
-
+      
         protected async void ButtonGuncelle_Click(object sender, EventArgs e)
         {
             try
@@ -141,7 +138,7 @@ namespace AssetManagmentSite
             {
                 UpdatedAlert.Visible = true;
                 // 10 saniye sonra uyarı mesajını gizle
-                ShowAfterDelete(UpdatedAlert);
+                transactions.ShowAfterDelete(UpdatedAlert, this);
                 VeriKaldir();
             }
 
@@ -171,7 +168,7 @@ namespace AssetManagmentSite
             {
                 DeletedAlert.Visible = true;
                 // 10 saniye sonra uyarı mesajını gizle
-                ShowAfterDelete(DeletedAlert);
+                transactions.ShowAfterDelete(DeletedAlert, this);
                 VeriKaldir();
             }
         }
@@ -207,7 +204,7 @@ namespace AssetManagmentSite
             else
             {
                 PersonelAraAlert.Visible = false;
-                ShowAfterDelete(PersonelAraAlert);
+                transactions.ShowAfterDelete(PersonelAraAlert, this);
                 VeriKaldir();
             }
         }

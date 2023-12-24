@@ -211,6 +211,7 @@
     <Compile Include="RequestsPage.aspx.designer.cs">
       <DependentUpon>RequestsPage.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Transactions.cs" />
     <Compile Include="UsageRegistration.cs">
       <DependentUpon>AssetManagementModel.tt</DependentUpon>
     </Compile>
