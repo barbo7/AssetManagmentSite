@@ -133,7 +133,7 @@
                                         </div>
                                         <div class="col-xxl-5 text-end" style="text-align: right;">
                                             <asp:Button runat="server" class="btn btn-success btn-lg fs-5 d-inline" OnClick="UrunGuncelleButton_Click" type="button" Style="position: static; display: block; transform: rotate(0deg) scale(0.88); padding-top: 6px; color: var(--bs-border-color); margin-top: 10px; margin-left: 10px;" Text="Güncelle" />
-                                            <asp:Button runat="server" Text="Sil" OnClick="ButtonSil_Click"
+
                                                 class="btn btn-danger btn-lg fs-5 d-inline" type="submit" ID="ButtonSil"
                                                 Style="position: static; display: block; transform: rotate(0deg) scale(0.88); padding-top: 6px; padding-right: 40px; padding-left: 40px; margin-top: 10px; margin-left: 50px;" />
                                         </div>
