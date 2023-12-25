@@ -20,27 +20,22 @@ namespace AssetManagmentSite
 
             if (!Page.IsPostBack)
             {
-                //linkTab1.Attributes["class"] = "nav-link active";
-                //linkTab2.Attributes["class"] = "nav-link";
-                //tab1.Attributes["class"] = "tab-pane active";
-                //tab2.Attributes["class"] = "tab-pane";
-
                 UrunListesi();
             }
-            else if (Request["__EVENTTARGET"] == "SearchUrun")
+            else
             {
-                AraVeGuncelle(SearchUrun.Value);
-            }
-            else if (Request["__EVENTTARGET"] == "DropDownListProductList")
-            {
-                //linkTab1.Attributes["class"] = "nav-link";
-                //linkTab2.Attributes["class"] = "nav-link active";
-                //tab1.Attributes["class"] = "tab-pane";
-                //tab2.Attributes["class"] = "tab-pane active";
-                int productId = Convert.ToInt32(DropDownListProductList.SelectedValue);
+                string eventTarget = Request["__EVENTTARGET"];
+                if (!string.IsNullOrEmpty(eventTarget) && eventTarget == "DropDownListProductList")
+                {
+                    int productId = Convert.ToInt32(DropDownListProductList.SelectedValue);
 
-                UrunBilgileri(productId);
+                    UrunBilgileri(productId);
+                }
             }
+        }
+        protected void SearchChanged(object sender, EventArgs e)
+        {
+            AraVeGuncelle(SearchUrun.Text);
         }
         private void UrunListesi()
         {
@@ -86,7 +81,7 @@ namespace AssetManagmentSite
         }
         protected void UrunBilgileri(int productId)
         {
-            
+
             if (productId <= 0)
             {
                 return;
@@ -104,7 +99,7 @@ namespace AssetManagmentSite
             UrunVarMi(UpdatedAlert, UpdatedAlertText, "Ürün Bulunamadı.");
 
             int productId = Convert.ToInt32(DropDownListProductList.SelectedValue);
-           
+
             try
             {
                 var product = entities.Inventories.FindAsync(productId).Result;

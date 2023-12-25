@@ -104,8 +104,6 @@ namespace AssetManagmentSite
 
             }
         }
-
-      
         protected async void ButtonGuncelle_Click(object sender, EventArgs e)
         {
             try
