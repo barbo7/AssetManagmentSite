@@ -18,24 +18,19 @@ namespace AssetManagmentSite
         protected void Page_Load(object sender, EventArgs e)
         {
 
+
             if (!Page.IsPostBack)
             {
+                VeriKaldir();
                 UrunListesi();
             }
-            else
-            {
-                string eventTarget = Request["__EVENTTARGET"];
-                if (!string.IsNullOrEmpty(eventTarget) && eventTarget == "DropDownListProductList")
-                {
-                    int productId = Convert.ToInt32(DropDownListProductList.SelectedValue);
-
-                    UrunBilgileri(productId);
-                }
-            }
+          
         }
         protected void SearchChanged(object sender, EventArgs e)
         {
-            AraVeGuncelle(SearchUrun.Text);
+            var urun = entities.Inventories.Where(x => x.ProductName.StartsWith(SearchUrun.Text)).ToList();
+            GridViewInventory.DataSource = urun;
+            GridViewInventory.DataBind();
         }
         private void UrunListesi()
         {
@@ -50,12 +45,7 @@ namespace AssetManagmentSite
             DropDownListProductList.Items.Insert(0, new ListItem("", "-1"));
 
         }
-        private void AraVeGuncelle(string aramaText)
-        {
-            var urun = entities.Inventories.Where(x => x.ProductName.StartsWith(aramaText)).ToList();
-            GridViewInventory.DataSource = urun;
-            GridViewInventory.DataBind();
-        }
+      
         protected void ButtonSil_Click(object sender, EventArgs e)
         {
             UrunVarMi(DeletedAlert, DeletedAlertText, "Ürün Bulunamadı.");
@@ -77,6 +67,11 @@ namespace AssetManagmentSite
         protected void PersonelIdDDL_SelectedIndexChanged(object sender, EventArgs e)
         {
             int productId = Convert.ToInt32(DropDownListProductList.SelectedValue);
+            if (productId <= 0)
+            {
+                 VeriKaldir();
+                return;
+            }
             UrunBilgileri(productId);
         }
         protected void UrunBilgileri(int productId)
@@ -164,10 +159,11 @@ namespace AssetManagmentSite
             ProductAmountInput.Value = "";
             ProductPriceInput1.Value = "";
             ProductPriceInput2.Value = "00";
+            ProductNameChangeInput.Value = "";
             ProductReorderLevelInput.Value = "";
             ProductAmountChangeInput.Value = "";
             ProductPriceChangeInput1.Value = "";
-            ProductPriceChangeInput2.Value = "";
+            ProductPriceChangeInput2.Value = "00";
             ProductReorderLevelChangeInput.Value = "";
         }
     }

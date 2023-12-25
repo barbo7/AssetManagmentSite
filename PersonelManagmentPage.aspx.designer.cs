@@ -33,13 +33,22 @@ namespace AssetManagmentSite
         protected global::System.Web.UI.ScriptManager ScriptManager1;
 
         /// <summary>
-        /// SearchInput control.
+        /// SearchEmployee control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl SearchInput;
+        protected global::System.Web.UI.WebControls.TextBox SearchEmployee;
+
+        /// <summary>
+        /// SearchEmployeeButton control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button SearchEmployeeButton;
 
         /// <summary>
         /// UpdatePanel1 control.
@@ -130,6 +139,15 @@ namespace AssetManagmentSite
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl DeletedAlertText;
+
+        /// <summary>
+        /// UpdatePanel2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.UpdatePanel UpdatePanel2;
 
         /// <summary>
         /// NameSurnameInput control.

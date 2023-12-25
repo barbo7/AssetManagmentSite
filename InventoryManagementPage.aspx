@@ -64,7 +64,7 @@
                             <li class="nav-item" role="presentation"><a class="nav-link active " role="tab" data-bs-toggle="tab" href="#tab-2" style="color: rgb(171,15,210);">Veri Güncelle</a></li>
 
                         </ul>
-                        <asp:UpdatePanel ID="UpdatePanel2" runat="server">
+                        <asp:UpdatePanel ID="UpdatePanel2" runat="server" UpdateMode="Conditional">
                             <%--GridView'i bir UpdatePanel içine koyun. Bu, AJAX postback sırasında sadece GridView'in güncellenmesini sağlayacaktır.--%>
                             <ContentTemplate>
 
@@ -150,12 +150,10 @@
                                     </div>
                                 </div>
                             </ContentTemplate>
+                            <Triggers>
+                                <asp:AsyncPostBackTrigger ControlID="DropDownListProductList" EventName="SelectedIndexChanged" />
+                                </Triggers>
                         </asp:UpdatePanel>
-                        <script type="text/javascript">
-                            function SearchChanged() {
-                                __doPostBack('DropDownListProductList', '');
-                            }
-                        </script>
                     </div>
                 </div>
             </div>

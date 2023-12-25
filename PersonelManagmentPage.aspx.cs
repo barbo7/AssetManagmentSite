@@ -21,15 +21,10 @@ namespace AssetManagmentSite
             {
                 PersonelListesi();
             }
-            else if (Request["__EVENTTARGET"] == "SearchInput")
-            {
-                AraVeGuncelle(SearchInput.Value);
-            }
         }
-
-        private void AraVeGuncelle(string aramaText)
+        protected void EmployeeSearch(object sender, EventArgs e)
         {
-            var emp = entities.Employees.Where(x => x.EmployeeName.StartsWith(aramaText)).ToList();
+            var emp = entities.Employees.Where(x => x.EmployeeName.StartsWith(SearchEmployee.Text)).ToList();
             GridViewPersonelList.DataSource = emp;
             GridViewPersonelList.DataBind();
         }
