@@ -24,7 +24,7 @@ namespace AssetManagmentSite
                 VeriKaldir();
                 UrunListesi();
             }
-          
+
         }
         protected void SearchChanged(object sender, EventArgs e)
         {
@@ -45,10 +45,29 @@ namespace AssetManagmentSite
             DropDownListProductList.Items.Insert(0, new ListItem("", "-1"));
 
         }
-      
-        protected void ButtonSil_Click(object sender, EventArgs e)
+
+        protected async void ButtonSil_Click(object sender, EventArgs e)
         {
             UrunVarMi(DeletedAlert, DeletedAlertText, "Ürün Bulunamadı.");
+
+            int productId = Convert.ToInt32(DropDownListProductList.SelectedValue);
+            try
+            {
+                var product = await entities.Inventories.FindAsync(productId);
+                entities.Inventories.Remove(product);
+                await entities.SaveChangesAsync();
+                UrunListesi();
+                VeriKaldir();
+                DeletedAlertText.InnerText = "Ürün başarıyla silindi.";
+                DeletedAlert.Visible = true;
+                transactions.ShowAfterDelete(DeletedAlert, this.Page);
+            }
+            catch(Exception)
+            {
+                DeletedAlertText.InnerText = "Ürün silinemedi.";
+                DeletedAlert.Visible = true;
+                transactions.ShowAfterDelete(DeletedAlert, this.Page);
+            }
 
         }
 
@@ -66,22 +85,27 @@ namespace AssetManagmentSite
         }
         protected void PersonelIdDDL_SelectedIndexChanged(object sender, EventArgs e)
         {
+            SuccessMessage.Visible = false;
+            UnsuccesfullyMessage.Visible = false;
+            UpdatedAlert.Visible = false;
+            DeletedAlert.Visible = false;
+
             int productId = Convert.ToInt32(DropDownListProductList.SelectedValue);
             if (productId <= 0)
             {
-                 VeriKaldir();
+                VeriKaldir();
                 return;
             }
             UrunBilgileri(productId);
         }
-        protected void UrunBilgileri(int productId)
+        protected async void UrunBilgileri(int productId)
         {
 
             if (productId <= 0)
             {
                 return;
             }
-            var product = entities.Inventories.FindAsync(productId).Result;
+            var product = await entities.Inventories.FindAsync(productId);
             ProductNameChangeInput.Value = product.ProductName;
             ProductAmountChangeInput.Value = product.ProductAmount.ToString();
             ProductPriceChangeInput1.Value = product.ProductPrice.ToString().Split(',')[0];
@@ -89,41 +113,41 @@ namespace AssetManagmentSite
             ProductReorderLevelChangeInput.Value = product.ReorderLevel.ToString();
         }
 
-        protected void UrunGuncelleButton_Click(object sender, EventArgs e)
+        protected async void UrunGuncelleButton_Click(object sender, EventArgs e)
         {
             UrunVarMi(UpdatedAlert, UpdatedAlertText, "Ürün Bulunamadı.");
 
-            int productId = Convert.ToInt32(DropDownListProductList.SelectedValue);
+            int productId = Convert.ToInt32(DropDownListProductList.SelectedItem.Value);
 
             try
             {
-                var product = entities.Inventories.FindAsync(productId).Result;
+                var product = await entities.Inventories.FindAsync(productId);
                 product.ProductName = ProductNameChangeInput.Value;
                 product.ProductAmount = Convert.ToInt32(ProductAmountChangeInput.Value);
                 product.ProductPrice = Convert.ToDecimal(ProductPriceChangeInput1.Value + "," + ProductPriceChangeInput2.Value);
                 product.ReorderLevel = Convert.ToInt32(ProductReorderLevelChangeInput.Value);
-                entities.SaveChangesAsync();
+                await entities.SaveChangesAsync();
                 UrunListesi();
                 VeriKaldir();
                 SuccessMessageText.InnerText = "Ürün başarıyla güncellendi.";
                 SuccessMessage.Visible = true;
                 transactions.ShowAfterDelete(SuccessMessage, this.Page);
             }
-            catch
+            catch(Exception ex)
             {
                 SuccessMessage.Visible = false;
-                UnsuccesfullyMessageText.InnerText = "Ürün güncellenemedi.";
+                UnsuccesfullyMessageText.InnerText = ex.Message;
                 UnsuccesfullyMessage.Visible = true;
                 transactions.ShowAfterDelete(UnsuccesfullyMessage, this.Page);
             }
         }
-        protected void UrunKaydetButton_Click(object sender, EventArgs e)
+        protected async void UrunKaydetButton_Click(object sender, EventArgs e)
         {
             bool productNameDuplicate = entities.Inventories.Any(x => x.ProductName == ProductNameInput.Value);
 
             if (ProductNameInput.Value == "" || ProductAmountInput.Value == "" || ProductPriceInput1.Value == "" || ProductPriceInput2.Value == "" || ProductReorderLevelInput.Value == "" || productNameDuplicate)
             {
-                SuccessMessage.Visible = true;
+                UnsuccesfullyMessageText.Visible = true;
                 UnsuccesfullyMessageText.InnerText = "Lütfen tüm alanları doldurunuz.";
                 transactions.ShowAfterDelete(UnsuccesfullyMessage, this.Page);
                 return;
@@ -138,14 +162,14 @@ namespace AssetManagmentSite
                     ReorderLevel = Convert.ToInt32(ProductReorderLevelInput.Value)
                 };
                 entities.Inventories.Add(inv);
-                entities.SaveChanges();
+                await entities.SaveChangesAsync();
                 UrunListesi();
                 VeriKaldir();
                 SuccessMessageText.InnerText = "Ürün başarıyla eklendi.";
                 SuccessMessage.Visible = true;
                 transactions.ShowAfterDelete(SuccessMessage, this.Page);
             }
-            catch
+            catch(Exception)
             {
                 SuccessMessage.Visible = false;
                 UnsuccesfullyMessageText.InnerText = "Ürün eklenemedi.";

@@ -43,6 +43,9 @@
                     </ContentTemplate>
                     <Triggers>
                         <asp:AsyncPostBackTrigger ControlID="SearchEmployeeButton" EventName="Click" />
+                        <asp:AsyncPostBackTrigger ControlID="ButtonSil" EventName="Click" />
+                        <asp:AsyncPostBackTrigger ControlID="ButtonKaydet" EventName="Click" />
+                        <asp:AsyncPostBackTrigger ControlID="ButtonGuncelle" EventName="Click" />
                         <asp:AsyncPostBackTrigger ControlID="SearchEmployee" EventName="TextChanged" />
                     </Triggers>
                 </asp:UpdatePanel>
@@ -50,10 +53,7 @@
                 <hr />
             </div>
             <div>
-                <div id="SuccessMessage" runat="server" visible="false" class="alert alert-success" role="alert"><span id="SuccessMessageText" runat="server">Başarıyla Eklendi! </span></div>
-                <div id="UnsuccesfullyMessage" runat="server" visible="false" class="alert alert-primary" role="alert"><span id="UnsuccesfullyMessageText" runat="server">Eklenemedi! </span></div>
-                <div id="UpdatedAlert" runat="server" visible="false" class="alert alert-warning" role="alert"><span id="UpdatedAlertText" runat="server">Personel Bilgileri Değişti! </span></div>
-                <div id="DeletedAlert" runat="server" visible="false" class="alert alert-danger" role="alert"><span id="DeletedAlertText" runat="server">Personel Silindi! </span></div>
+
                 <div class="row">
                     <div class="col-md-12 col-lg-12 col-xl-12">
                         <h4 class="text-start" style="color: var(--bs-primary-text-emphasis);">Personel İşlemleri</h4>
@@ -69,6 +69,10 @@
 
                             <asp:UpdatePanel runat="server" ID="UpdatePanel2">
                                 <ContentTemplate>
+                                    <div id="SuccessMessage" runat="server" visible="false" class="alert alert-success" role="alert"><span id="SuccessMessageText" runat="server">Başarıyla Eklendi! </span></div>
+                                    <div id="UnsuccesfullyMessage" runat="server" visible="false" class="alert alert-primary" role="alert"><span id="UnsuccesfullyMessageText" runat="server">Eklenemedi! </span></div>
+                                    <div id="UpdatedAlert" runat="server" visible="false" class="alert alert-warning" role="alert"><span id="UpdatedAlertText" runat="server">Personel Bilgileri Değişti! </span></div>
+                                    <div id="DeletedAlert" runat="server" visible="false" class="alert alert-danger" role="alert"><span id="DeletedAlertText" runat="server">Personel Silindi! </span></div>
                                     <div class="tab-content">
                                         <div class="tab-pane " role="tabpanel" id="tab-1">
 
@@ -101,7 +105,7 @@
                                             <div class="row">
                                                 <div class="col-lg-11 col-xxl-10">
                                                     <div class="col-lg-11 col-xxl-10">
-                                                        <asp:Button runat="server" OnClick="ButtonEkle_Click"
+                                                        <asp:Button runat="server" OnClick="ButtonEkle_Click" ID="ButtonKaydet"
                                                             CssClass="btn btn-primary btn-lg fs-5 float-start"
                                                             Text="Kaydet"
                                                             Style="position: static; display: block; transform: rotate(0deg) scale(0.88); padding-top: 6px; margin-top: 0px; color: var(--bs-body-bg); background: var(--bs-btn-bg);" />

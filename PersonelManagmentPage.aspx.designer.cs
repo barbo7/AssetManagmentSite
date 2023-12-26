@@ -69,6 +69,15 @@ namespace AssetManagmentSite
         protected global::System.Web.UI.WebControls.GridView GridViewPersonelList;
 
         /// <summary>
+        /// UpdatePanel2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.UpdatePanel UpdatePanel2;
+
+        /// <summary>
         /// SuccessMessage control.
         /// </summary>
         /// <remarks>
@@ -141,15 +150,6 @@ namespace AssetManagmentSite
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl DeletedAlertText;
 
         /// <summary>
-        /// UpdatePanel2 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.UpdatePanel UpdatePanel2;
-
-        /// <summary>
         /// NameSurnameInput control.
         /// </summary>
         /// <remarks>
@@ -184,6 +184,15 @@ namespace AssetManagmentSite
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlTextArea DetailsInput;
+
+        /// <summary>
+        /// ButtonKaydet control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button ButtonKaydet;
 
         /// <summary>
         /// DropDownListPersonelId control.

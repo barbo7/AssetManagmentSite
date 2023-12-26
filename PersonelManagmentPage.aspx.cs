@@ -78,7 +78,7 @@ namespace AssetManagmentSite
                 PersonelListesi();
 
             }
-            catch
+            catch(Exception)
             {
                 UnsuccesfullyMessageText.InnerText = "Personel Eklenemedi.";
                 UnsuccesfullyMessage.Visible = true;
@@ -107,12 +107,12 @@ namespace AssetManagmentSite
 
                 if (employeeId > 0)
                 {
-                    var employee = entities.Employees.FindAsync(employeeId);
-                    employee.Result.EmployeeName = NameSurnameChangeInput.Value;
+                    var employee =await entities.Employees.FindAsync(employeeId);
+                    employee.EmployeeName = NameSurnameChangeInput.Value;
                     //employee.Result.EmployeeDepartment = DropDownListPersonelDepartments.SelectedValue;
-                    employee.Result.EmployeeDepartment = PersonelDepartmanChangeInput.Text;
-                    employee.Result.EmployeeRole = PersonelRoleChangeInput.Value;
-                    employee.Result.EmployeeDetails = PersonelDetailsChangeInput.Value;
+                    employee.EmployeeDepartment = PersonelDepartmanChangeInput.Text;
+                    employee.EmployeeRole = PersonelRoleChangeInput.Value;
+                    employee.EmployeeDetails = PersonelDetailsChangeInput.Value;
                     await entities.SaveChangesAsync();
                     UpdatedAlertText.InnerText = "Personel Bilgileri Değişti!";
                     PersonelListesi();
@@ -123,7 +123,7 @@ namespace AssetManagmentSite
 
                 }
             }
-            catch (Exception)
+            catch(Exception)
             {
                 UpdatedAlertText.InnerText = "Güncelleme işlemi başarısız oldu. Tekrar deneyiniz.";
             }
@@ -147,22 +147,27 @@ namespace AssetManagmentSite
             try
             {
                 int empID = PersonelIdGetir();
-                var emp = entities.Employees.FindAsync(empID);
-                entities.Employees.Remove(emp.Result);
+                var emp = await entities.Employees.FindAsync(empID);
+                entities.Employees.Remove(emp);
                 await entities.SaveChangesAsync();
                 DeletedAlertText.InnerText = "Personel Kayıttan Silindi!";
                 PersonelListesi();
             }
-            catch (Exception)
+            catch(Exception)
             {
                 DeletedAlertText.InnerText = "Silme işlemi başarısız oldu.";
             }
             finally
             {
+                SuccessMessage.Visible = false;
+                UnsuccesfullyMessage.Visible = false;
+                UpdatedAlert.Visible = false;
                 DeletedAlert.Visible = true;
                 // 10 saniye sonra uyarı mesajını gizle
                 transactions.ShowAfterDelete(DeletedAlert, this);
+
                 VeriKaldir();
+
             }
         }
         private void VeriKaldir()
@@ -178,6 +183,10 @@ namespace AssetManagmentSite
         }
         protected void PersonelIdDDL_SelectedIndexChanged(object sender, EventArgs e)
         {
+            SuccessMessage.Visible = false;
+            UnsuccesfullyMessage.Visible = false;
+            UpdatedAlert.Visible = false;
+            DeletedAlert.Visible = false;
             int employeeId = PersonelIdGetir();
 
             if (employeeId > 0)
