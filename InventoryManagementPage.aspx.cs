@@ -177,6 +177,16 @@ namespace AssetManagmentSite
                 transactions.ShowAfterDelete(UnsuccesfullyMessage, this.Page);
             }
         }
+        protected void LinkButtonTab1_Click(object sender, EventArgs e)
+        {
+            PanelTab1.Visible=true;
+            PanelTab2.Visible = false;
+        }
+        protected void LinkButtonTab2_Click(object sender, EventArgs e)
+        {
+            PanelTab2.Visible = true;
+            PanelTab1.Visible = false;
+        }
         private void VeriKaldir()
         {
             ProductNameInput.Value = "";
