@@ -78,6 +78,24 @@ namespace AssetManagmentSite
         protected global::System.Web.UI.UpdatePanel UpdatePanel2;
 
         /// <summary>
+        /// LinkButtonTab1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton LinkButtonTab1;
+
+        /// <summary>
+        /// LinkButtonTab2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton LinkButtonTab2;
+
+        /// <summary>
         /// SuccessMessage control.
         /// </summary>
         /// <remarks>
@@ -150,6 +168,15 @@ namespace AssetManagmentSite
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl DeletedAlertText;
 
         /// <summary>
+        /// PanelTab1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel PanelTab1;
+
+        /// <summary>
         /// NameSurnameInput control.
         /// </summary>
         /// <remarks>
@@ -193,6 +220,15 @@ namespace AssetManagmentSite
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button ButtonKaydet;
+
+        /// <summary>
+        /// PanelTab2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel PanelTab2;
 
         /// <summary>
         /// DropDownListPersonelId control.

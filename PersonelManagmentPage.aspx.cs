@@ -181,6 +181,20 @@ namespace AssetManagmentSite
             PersonelRoleChangeInput.Value = "";
             PersonelDetailsChangeInput.Value = "";
         }
+        protected void LinkButtonTab1_Click(object sender, EventArgs e)
+        {
+            LinkButtonTab1.CssClass = "nav-link active";
+            LinkButtonTab2.CssClass = "nav-link ";
+            PanelTab1.Visible = true;
+            PanelTab2.Visible = false;
+        }
+        protected void LinkButtonTab2_Click(object sender, EventArgs e)
+        {
+            LinkButtonTab1.CssClass = "nav-link ";
+            LinkButtonTab2.CssClass = "nav-link active";
+            PanelTab2.Visible = true;
+            PanelTab1.Visible = false;
+        }
         protected void PersonelIdDDL_SelectedIndexChanged(object sender, EventArgs e)
         {
             SuccessMessage.Visible = false;

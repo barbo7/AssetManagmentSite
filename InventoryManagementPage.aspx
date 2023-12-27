@@ -58,21 +58,22 @@
                 <div class="row">
                     <div class="col-md-12 col-lg-12 col-xl-12">
                         <h4 class="text-start" style="color: var(--bs-primary-text-emphasis);">Envanter İşlemleri</h4>
-                        <div>
-                            <ul class="nav nav-tabs" role="tablist">
-                                <li class="nav-item" role="presentation">
-                                    <asp:LinkButton ID="LinkButtonTab1" class="nav-link " role="tab" data-bs-toggle="tab" Style="color: rgb(65,208,29);" runat="server" OnClick="LinkButtonTab1_Click" Text="Veri Girişi"></asp:LinkButton>
-                                </li>
-                                <li class="nav-item" role="presentation">
-                                    <asp:LinkButton ID="LinkButtonTab2" class="nav-link active " role="tab" data-bs-toggle="tab" Style="color: rgb(171,15,210);" runat="server" OnClick="LinkButtonTab2_Click" Text="Veri Güncelle"></asp:LinkButton>
+                        <asp:UpdatePanel ID="UpdatePanel2" runat="server" UpdateMode="Conditional">
 
-                                </li>
-                            </ul>
+                            <%--GridView'i bir UpdatePanel içine koyun. Bu, AJAX postback sırasında sadece GridView'in güncellenmesini sağlayacaktır.--%>
+                            <ContentTemplate>
+                                <div>
+                                    <ul class="nav nav-tabs" role="tablist">
+                                        <li class="nav-item" role="presentation">
+                                            <asp:LinkButton ID="LinkButtonTab1" class="nav-link " role="tab" data-bs-toggle="tab" Style="color: rgb(65,208,29);" runat="server" OnClick="LinkButtonTab1_Click" Text="Veri Girişi"></asp:LinkButton>
+                                        </li>
+                                        <li class="nav-item" role="presentation">
+                                            <asp:LinkButton ID="LinkButtonTab2" class="nav-link active " role="tab" data-bs-toggle="tab" Style="color: rgb(171,15,210);" runat="server" OnClick="LinkButtonTab2_Click" Text="Veri Güncelle"></asp:LinkButton>
 
-                            <asp:UpdatePanel ID="UpdatePanel2" runat="server" UpdateMode="Conditional">
+                                        </li>
+                                    </ul>
 
-                                <%--GridView'i bir UpdatePanel içine koyun. Bu, AJAX postback sırasında sadece GridView'in güncellenmesini sağlayacaktır.--%>
-                                <ContentTemplate>
+
                                     <div id="SuccessMessage" runat="server" visible="false" class="alert alert-success" role="alert"><span id="SuccessMessageText" runat="server">Başarıyla Eklendi! </span></div>
                                     <div id="UnsuccesfullyMessage" runat="server" visible="false" class="alert alert-primary" role="alert"><span id="UnsuccesfullyMessageText" runat="server">Eklenemedi! </span></div>
                                     <div id="UpdatedAlert" runat="server" visible="false" class="alert alert-warning" role="alert"><span id="UpdatedAlertText" runat="server">Varlık Bilgileri Değişti! </span></div>
@@ -163,19 +164,19 @@
                                             </div>
                                         </asp:Panel>
                                     </div>
-                                </ContentTemplate>
-                                <Triggers>
-                                    <asp:AsyncPostBackTrigger ControlID="LinkButtonTab2" EventName="Click" />
-                                    <asp:AsyncPostBackTrigger ControlID="LinkButtonTab1" EventName="Click" />
-                                    <asp:AsyncPostBackTrigger ControlID="DropDownListProductList" EventName="SelectedIndexChanged" />
-                                </Triggers>
-                            </asp:UpdatePanel>
-                        </div>
+                            </ContentTemplate>
+                            <Triggers>
+                                <asp:AsyncPostBackTrigger ControlID="LinkButtonTab2" EventName="Click" />
+                                <asp:AsyncPostBackTrigger ControlID="LinkButtonTab1" EventName="Click" />
+                                <asp:AsyncPostBackTrigger ControlID="DropDownListProductList" EventName="SelectedIndexChanged" />
+                            </Triggers>
+                        </asp:UpdatePanel>
                     </div>
                 </div>
-                <hr />
-                <%--<h3 >Stok Takip</h3>--%>
-                <%-- <div class="row" >
+            </div>
+            <hr />
+            <%--<h3 >Stok Takip</h3>--%>
+            <%-- <div class="row" >
                     <div class="col-md-3 col-lg-2"></div>
                     <div class="col-md-3 col-lg-2"></div>
                     <div class="col-md-6 col-lg-8">
@@ -199,7 +200,6 @@
                         </div>
                     </div>
                 </div>--%>
-            </div>
         </div>
     </form>
 </asp:Content>
