@@ -34,7 +34,8 @@
                                     <Columns>
                                         <asp:BoundField DataField="ProductID" HeaderText="Ürün ID" />
                                         <asp:BoundField DataField="ProductName" HeaderText="Ürün Adı" />
-                                        <asp:BoundField DataField="ProductAmount" HeaderText="Mevcut Miktar" />
+                                        <asp:BoundField DataField="ProductAmount" HeaderText="Mevcut Miktar" 
+                                            />
                                         <asp:BoundField DataField="ProductPrice" HeaderText="Fiyatı" />
                                         <asp:BoundField DataField="ReorderLevel" HeaderText="Yeniden Sipariş Seviyesi" />
                                     </Columns>
@@ -162,8 +163,8 @@
                     </div>
                 </div>
                 <hr />
-                <h3>Stok Takip</h3>
-                <div class="row">
+                <%--<h3 >Stok Takip</h3>--%>
+               <%-- <div class="row" >
                     <div class="col-md-3 col-lg-2"></div>
                     <div class="col-md-3 col-lg-2"></div>
                     <div class="col-md-6 col-lg-8">
@@ -186,7 +187,7 @@
                             </div>
                         </div>
                     </div>
-                </div>
+                </div>--%>
             </div>
         </div>
     </form>
