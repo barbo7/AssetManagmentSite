@@ -52,16 +52,17 @@ namespace AssetManagmentSite
             DropDownListVarlikDurumChangeInput.DataSource = Durumu;
             DropDownListVarlikDurumChangeInput.DataBind();
 
-            GridViewVarliklarBakimListesi.DataSource = from m in db.MaintenanceRecords
-                                                       join a in db.Assets on m.AssetID equals a.AssetID
-                                                       select new
-                                                       {
-                                                              m.MaintenanceRecordID,
-                                                              a.AssetName,
-                                                              m.MaintenanceDate,
-                                                              m.MaintenanceDetails,
-                                                              m.MaintenanceCost
-                                                         };
+            var MaintenanceDatas = from m in db.MaintenanceRecords
+                                   join a in db.Assets on m.AssetID equals a.AssetID
+                                   select new
+                                   {
+                                       a.AssetName,
+                                       m.MaintenanceDate,
+                                       m.MaintenanceDetails,
+                                       m.MaintenanceCost
+                                   };
+
+            GridViewVarliklarBakimListesi.DataSource = MaintenanceDatas.ToList();
             GridViewVarliklarBakimListesi.DataBind();
         }
         protected void SearchChanged(object sender, EventArgs e)
