@@ -18,7 +18,7 @@ namespace AssetManagmentSite
         public int AssetID { get; set; }
         public int PersonelID { get; set; }
         public System.DateTime UsageDateStart { get; set; }
-        public System.DateTime UsageDateEnd { get; set; }
-        public string UsageRegistrationStatus { get; set; }
+        public Nullable<System.DateTime> UsageDateEnd { get; set; }
+        public string Status { get; set; }
     }
 }

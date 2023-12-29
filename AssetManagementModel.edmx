@@ -22,7 +22,7 @@
           <Property Name="AssetID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="AssetName" Type="nvarchar" MaxLength="100" Nullable="false" />
           <Property Name="AssetBoughtDate" Type="datetime" Nullable="false" />
-          <Property Name="AssetPrice" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="AssetPrice" Type="decimal" Precision="18" Scale="2" Nullable="false" />
           <Property Name="AssetStatus" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="AssetLocation" Type="nvarchar" MaxLength="100" />
         </EntityType>
@@ -77,8 +77,8 @@
           <Property Name="AssetID" Type="int" Nullable="false" />
           <Property Name="PersonelID" Type="int" Nullable="false" />
           <Property Name="UsageDateStart" Type="datetime" Nullable="false" />
-          <Property Name="UsageDateEnd" Type="datetime" Nullable="false" />
-          <Property Name="UsageRegistrationStatus" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="UsageDateEnd" Type="datetime" />
+          <Property Name="Status" Type="varchar" MaxLength="20" />
         </EntityType>
         <EntityType Name="Workflows">
           <Key>
@@ -152,7 +152,7 @@
           <Property Name="AssetID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="AssetName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="AssetBoughtDate" Type="DateTime" Nullable="false" Precision="3" />
-          <Property Name="AssetPrice" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="AssetPrice" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
           <Property Name="AssetStatus" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="AssetLocation" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
         </EntityType>
@@ -207,8 +207,8 @@
           <Property Name="AssetID" Type="Int32" Nullable="false" />
           <Property Name="PersonelID" Type="Int32" Nullable="false" />
           <Property Name="UsageDateStart" Type="DateTime" Nullable="false" Precision="3" />
-          <Property Name="UsageDateEnd" Type="DateTime" Nullable="false" Precision="3" />
-          <Property Name="UsageRegistrationStatus" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="UsageDateEnd" Type="DateTime" Precision="3" />
+          <Property Name="Status" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityType Name="Workflow">
           <Key>
@@ -341,12 +341,12 @@
           <EntitySetMapping Name="UsageRegistrations">
             <EntityTypeMapping TypeName="AssetManagmentModel.UsageRegistration">
               <MappingFragment StoreEntitySet="UsageRegistrations">
+                <ScalarProperty Name="Status" ColumnName="Status" />
                 <ScalarProperty Name="UsageRegistrationID" ColumnName="UsageRegistrationID" />
                 <ScalarProperty Name="AssetID" ColumnName="AssetID" />
                 <ScalarProperty Name="PersonelID" ColumnName="PersonelID" />
                 <ScalarProperty Name="UsageDateStart" ColumnName="UsageDateStart" />
                 <ScalarProperty Name="UsageDateEnd" ColumnName="UsageDateEnd" />
-                <ScalarProperty Name="UsageRegistrationStatus" ColumnName="UsageRegistrationStatus" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

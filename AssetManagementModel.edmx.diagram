@@ -11,7 +11,7 @@
         <EntityTypeShape EntityType="AssetManagmentModel.Inventory" Width="1.5" PointX="5.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="AssetManagmentModel.MaintenanceRecord" Width="1.5" PointX="6.75" PointY="3.75" IsExpanded="true" />
         <EntityTypeShape EntityType="AssetManagmentModel.Request" Width="1.5" PointX="6.75" PointY="6.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="AssetManagmentModel.UsageRegistration" Width="1.5" PointX="7.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="AssetManagmentModel.UsageRegistration" Width="2.5" PointX="8.125" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="AssetManagmentModel.Workflow" Width="1.5" PointX="0.75" PointY="1.125" IsExpanded="true" />
         <EntityTypeShape EntityType="AssetManagmentModel.WorkflowStatu" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
         <AssociationConnector Association="AssetManagmentModel.FK_dbo_WorkflowStatus_dbo_Workflows_WorkFlowID" ManuallyRouted="false" />
