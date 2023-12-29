@@ -33,6 +33,24 @@ namespace AssetManagmentSite
         protected global::System.Web.UI.ScriptManager ScriptManagerR;
 
         /// <summary>
+        /// SearchAsset control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox SearchAsset;
+
+        /// <summary>
+        /// SearchAssetButton control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button SearchAssetButton;
+
+        /// <summary>
         /// GridViewAssetList control.
         /// </summary>
         /// <remarks>
@@ -49,6 +67,78 @@ namespace AssetManagmentSite
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.UpdatePanel UpdatePanel1;
+
+        /// <summary>
+        /// SuccessMessage control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl SuccessMessage;
+
+        /// <summary>
+        /// SuccessMessageText control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl SuccessMessageText;
+
+        /// <summary>
+        /// UnsuccesfullyMessage control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl UnsuccesfullyMessage;
+
+        /// <summary>
+        /// UnsuccesfullyMessageText control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl UnsuccesfullyMessageText;
+
+        /// <summary>
+        /// UpdatedAlert control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl UpdatedAlert;
+
+        /// <summary>
+        /// UpdatedAlertText control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl UpdatedAlertText;
+
+        /// <summary>
+        /// DeletedAlert control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl DeletedAlert;
+
+        /// <summary>
+        /// DeletedAlertText control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl DeletedAlertText;
 
         /// <summary>
         /// LinkButtonTab1 control.
@@ -114,13 +204,13 @@ namespace AssetManagmentSite
         protected global::System.Web.UI.HtmlControls.HtmlInputText AssetLocationInput;
 
         /// <summary>
-        /// DropDownListVarlikDurumuListele control.
+        /// VarlikDurumuInput control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DropDownListVarlikDurumuListele;
+        protected global::System.Web.UI.WebControls.TextBox VarlikDurumuInput;
 
         /// <summary>
         /// AssetBoughtDateInput control.
@@ -130,6 +220,15 @@ namespace AssetManagmentSite
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl AssetBoughtDateInput;
+
+        /// <summary>
+        /// KaydetButton control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button KaydetButton;
 
         /// <summary>
         /// TabPanel2 control.
@@ -193,6 +292,33 @@ namespace AssetManagmentSite
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl AssetBoughtChangeInput;
+
+        /// <summary>
+        /// AssetLocationChangeInput control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputText AssetLocationChangeInput;
+
+        /// <summary>
+        /// GuncelleButton control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button GuncelleButton;
+
+        /// <summary>
+        /// SilButton control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button SilButton;
 
         /// <summary>
         /// GridViewVarliklarBakimListesi control.
