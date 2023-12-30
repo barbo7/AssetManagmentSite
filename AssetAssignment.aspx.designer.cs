@@ -231,30 +231,30 @@ namespace AssetManagmentSite
         protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl UsageEndDateIade;
 
         /// <summary>
-        /// MyGridView control.
+        /// TablePanel control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView MyGridView;
+        protected global::System.Web.UI.WebControls.Panel TablePanel;
 
         /// <summary>
-        /// DropDownListAssetAssignmentEmployeePast control.
+        /// DropDownListAssetAssignmentChoices control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DropDownListAssetAssignmentEmployeePast;
+        protected global::System.Web.UI.WebControls.DropDownList DropDownListAssetAssignmentChoices;
 
         /// <summary>
-        /// GridView1 control.
+        /// GridViewAssetAssignment control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView GridView1;
+        protected global::System.Web.UI.WebControls.GridView GridViewAssetAssignment;
     }
 }

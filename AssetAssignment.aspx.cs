@@ -12,6 +12,7 @@ namespace AssetManagmentSite
     {
         AssetManagmentEntities db = new AssetManagmentEntities();
         Transactions transactions = new Transactions();
+        List<string> assetStats = new List<string>() {  "Kullanİmda", "İade Edildi" };
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
@@ -57,7 +58,23 @@ namespace AssetManagmentSite
             DropDownListPersonelAdlariIade.DataBind();
             DropDownListPersonelAdlariIade.Items.Insert(0, new ListItem("", "-1"));
 
+            var usageTable = from usage in db.UsageRegistrations
+                             join emp in db.Employees on usage.PersonelID equals emp.EmployeeID
+                                join asset in db.Assets on usage.AssetID equals asset.AssetID
+                                select new
+                                {
+                                    asset.AssetName,
+                                    emp.EmployeeName,
+                                    usage.UsageDateStart,
+                                    usage.UsageDateEnd,
+                                    usage.Status
+                                };
+            GridViewAssetAssignment.DataSource = usageTable.ToList();
+            GridViewAssetAssignment.DataBind();
 
+            DropDownListAssetAssignmentChoices.DataSource = assetStats;
+            DropDownListAssetAssignmentChoices.DataBind();
+            DropDownListAssetAssignmentChoices.Items.Insert(0, new ListItem("", "-1"));
         }
 
         protected async void VarlikEkleButton_Click(object sender, EventArgs e)
@@ -186,6 +203,24 @@ namespace AssetManagmentSite
             UsageRegistration usageData =  db.UsageRegistrations.Find(usageDatas);
             UsageStartDateIade.Value = usageData.UsageDateStart.ToString("yyyy-MM-dd");
             UsageEndDateIade.Value = DateTime.Now.ToString("yyyy-MM-dd");
+        }
+
+        protected void DDL_AssetAssignmentChoices(object sender, EventArgs e)
+        {
+            var usageReg = from usageR in db.UsageRegistrations
+                           join emp in db.Employees on usageR.PersonelID equals emp.EmployeeID
+                            join asset in db.Assets on usageR.AssetID equals asset.AssetID
+                            where usageR.Status == DropDownListAssetAssignmentChoices.SelectedItem.Text
+                            select new
+                            {
+                                 asset.AssetName,
+                                 emp.EmployeeName,
+                                 usageR.UsageDateStart,
+                                 usageR.UsageDateEnd,
+                                 usageR.Status
+                            };
+            GridViewAssetAssignment.DataSource = usageReg.ToList();
+            GridViewAssetAssignment.DataBind();
         }
 
 

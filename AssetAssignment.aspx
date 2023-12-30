@@ -97,74 +97,40 @@
                                 </div>
                             </asp:Panel>
                         </div>
+
+                        <asp:Panel ID="TablePanel" runat="server">
+                            <div class="card mt-4">
+                                <div class="card-body">
+                                    <h4 style="color: rgb(16,221,110);">Mevcut Varlık Atamaları</h4>
+                                    <label class="form-label">Atama Durumuna Göre Filtrele</label>
+
+                                    <div style="text-align: center; width: 20%; border-style: groove;">
+                                        <asp:DropDownList ID="DropDownListAssetAssignmentChoices" OnSelectedIndexChanged="DDL_AssetAssignmentChoices" AutoPostBack="true" runat="server" CssClass="btn dropdown-toggle placeholder" placeholder="Seçiniz"
+                                            Style="width: 100%; border-style: groove;">
+                                        </asp:DropDownList>
+                                    </div>
+                                    <div style="text-align: center;" class="card-body border-3 shadow border rounded-0">
+                                        <asp:GridView ID="GridViewAssetAssignment" runat="server" CssClass="table" AutoGenerateColumns="false">
+                                            <Columns>
+                                                <asp:BoundField DataField="AssetName" HeaderText="Varlık Adı" />
+                                                <asp:BoundField DataField="EmployeeName" HeaderText="Personel Adı" />
+                                                <asp:BoundField DataField="UsageDateStart" HeaderText="Kullanmaya Başlama Tarihi" DataFormatString="{0:dd/MM/yyyy}" />
+                                                <asp:BoundField DataField="UsageDateEnd" HeaderText="Kullanım Bitiş Tarihi" DataFormatString="{0:dd/MM/yyyy}" />
+                                                <asp:BoundField DataField="Status" HeaderText="Varlık Durumu" />
+                                            </Columns>
+                                        </asp:GridView>
+                                    </div>
+                                </div>
+                            </div>
+                        </asp:Panel>
                 </ContentTemplate>
                 <Triggers>
                     <asp:AsyncPostBackTrigger ControlID="DropDownListPersonelAdlariIade" EventName="SelectedIndexChanged" />
                     <asp:AsyncPostBackTrigger ControlID="DropDownListVarlikListesiIade" EventName="SelectedIndexChanged" />
+                    <asp:AsyncPostBackTrigger ControlID="DropDownListAssetAssignmentChoices" EventName="SelectedIndexChanged" />
                     <asp:AsyncPostBackTrigger ControlID="VarlikEkleButton" EventName="Click" />
                 </Triggers>
             </asp:UpdatePanel>
-
-            <div class="card mt-4">
-                <div class="card-body">
-                    <h4 style="color: rgb(16,221,110);">Mevcut Varlık Atamaları</h4>
-
-                    <div style="text-align: center;" class="card-body border-3 shadow border rounded-0">
-                        <asp:GridView ID="MyGridView" runat="server" CssClass="table" AutoGenerateColumns="false">
-                            <Columns>
-                                <asp:BoundField DataField="AssetName" HeaderText="Varlık Adı" />
-                                <asp:BoundField DataField="EmployeeName" HeaderText="Personel Adı" />
-                                <asp:BoundField DataField="UsageDateStart" HeaderText="Kullanmaya Başlama Tarihi" DataFormatString="{0:dd/MM/yyyy}" />
-                                <asp:BoundField DataField="UsageDateEnd" HeaderText="Kullanım Bitiş Tarihi" DataFormatString="{0:dd/MM/yyyy}" />
-                                <asp:BoundField DataField="AssetStatus" HeaderText="Varlık Durumu" />
-                                <asp:BoundField DataField="AssetDescription" HeaderText="Varlık Açıklaması" />
-                                <%--bunun yerine iade etmeyi sağlayan bi şey gelebilr--%>
-                            </Columns>
-                        </asp:GridView>
-                    </div>
-                </div>
-            </div>
-            <div class="card mt-4">
-                <div class="card-body">
-                    <h4 style="color: rgb(200,100,9);">Varlık İade / Atama Geçmişi</h4>
-                    <div style="text-align: center; border-style: groove;">
-                        <asp:DropDownList ID="DropDownListAssetAssignmentEmployeePast" runat="server" CssClass="btn dropdown-toggle"
-                            Style="width: 100%; border-style: groove;">
-                        </asp:DropDownList>
-                    </div>
-                    <div>
-                        <table class="table">
-                            <thead style="text-align: center;">
-                                <tr>
-                                    <th>Personel Adı</th>
-                                    <th>Talep Türü</th>
-                                    <th>Talep Detayları</th>
-                                    <th>Talep Durumu</th>
-                                    <th>Onaylayan<br />
-                                        Adı</th>
-                                    <th>Talep Tarihi</th>
-                                    <th>Onaylanma Tarihi</th>
-                                </tr>
-                            </thead>
-                            <tbody></tbody>
-                        </table>
-                    </div>
-                    <div style="text-align: center;" class="card-body border-3 shadow border rounded-0">
-                        <asp:GridView ID="GridView1" runat="server" CssClass="table" AutoGenerateColumns="false">
-                            <Columns>
-                                <asp:BoundField DataField="EmployeeName" HeaderText="Personel Adı" />
-                                <asp:BoundField DataField="RequestType" HeaderText="Talep Türü" />
-                                <asp:BoundField DataField="RequestDetails" HeaderText="Talep Detayları" />
-                                <asp:BoundField DataField="RequestStatus" HeaderText="Talep Durumu" />
-                                <asp:BoundField DataField="ApprovedBy" HeaderText="Onaylayan Adı" />
-                                <asp:BoundField DataField="RequestDate" HeaderText="Talep Tarihi" DataFormatString="{0:dd/MM/yyyy}" />
-                                <asp:BoundField DataField="ApprovedDate" HeaderText="Onaylanma Tarihi" DataFormatString="{0:dd/MM/yyyy}" />
-                            </Columns>
-                        </asp:GridView>
-                    </div>
-                </div>
-            </div>
-            <div class="card mt-4"></div>
         </div>
     </form>
 
