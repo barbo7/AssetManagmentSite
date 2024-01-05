@@ -138,7 +138,9 @@ namespace AssetManagmentSite
             ProductPriceChangeInput1.Value = asset.AssetPrice.ToString().Split(',')[0];
             ProductPriceChangeInput2.Value = asset.AssetPrice.ToString().Split(',')[1];
             AssetBoughtChangeInput.Value = asset.AssetBoughtDate.ToString("yyyy-MM-dd");
-            DropDownListVarlikDurumChangeInput.SelectedValue = asset.AssetStatus;
+            DropDownListVarlikDurumChangeInput.Items.Clear();
+            DropDownListVarlikDurumChangeInput.Items.Add(new ListItem(asset.AssetStatus, "0")); // Yeni değeri DropDownList'e ekle
+            DropDownListVarlikDurumChangeInput.Items.FindByValue("0").Selected = true; // Yeni değeri seçili hale getir
         }
         protected async void GuncelleButton_Click(object sender, EventArgs e)
         {

@@ -12,7 +12,7 @@ namespace AssetManagmentSite
     {
         AssetManagmentEntities db = new AssetManagmentEntities();
         Transactions transactions = new Transactions();
-        List<string> assetStats = new List<string>() {  "Kullanİmda", "İade Edildi" };
+        List<string> assetStats = new List<string>() {  "Kullanimda", "İade Edildi" };
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
