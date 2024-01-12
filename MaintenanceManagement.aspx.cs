@@ -100,10 +100,10 @@ namespace AssetManagmentSite
                 transaction.ShowAfterDelete(UnsuccesfullyMessage, this);
                 return;
             }
-            int id = Convert.ToInt32(DDLUrunInput.SelectedValue);
+          
+            MaintenanceRecord mr = new MaintenanceRecord();
 
-            MaintenanceRecord mr = await db.MaintenanceRecords.FirstOrDefaultAsync(x => x.MaintenanceRecordID == id);
-
+            mr.AssetID = Convert.ToInt32(DDLUrunInput.SelectedValue);
             mr.MaintenanceDate = Convert.ToDateTime(MaintenanceDateInput.Value);
             mr.MaintenanceDetails = MaintenanceDetailsInput.Value;
             if (!string.IsNullOrEmpty(MaintenanceCostInput1.Value) && !string.IsNullOrEmpty(MaintenanceCostInput2.Value))
@@ -112,8 +112,6 @@ namespace AssetManagmentSite
             db.MaintenanceRecords.Add(mr);
             await db.SaveChangesAsync();
             VeriTemizle();
-            VeriGuncelle();
-
         }
         protected async void SilButton_Click(object sender, EventArgs e)
         {

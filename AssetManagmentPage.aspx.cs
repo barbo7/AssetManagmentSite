@@ -12,8 +12,8 @@ namespace AssetManagmentSite
     {
         AssetManagmentEntities db = new AssetManagmentEntities();
         Transactions transaction = new Transactions();
-        List<string> Durumu = new List<string>() { "","Boşta", "Arızalı" };
-      
+        List<string> Durumu = new List<string>() { "", "Boşta", "Arızalı" };
+
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -30,8 +30,16 @@ namespace AssetManagmentSite
             GridViewAssetList.DataSource = assetList;
             GridViewAssetList.DataBind();
 
-            var maintenanceList = db.MaintenanceRecords.ToList();
-            GridViewVarliklarBakimListesi.DataSource = maintenanceList;
+            var maintenanceList = from mr in db.MaintenanceRecords
+                                  join a in db.Assets on mr.AssetID equals a.AssetID
+                                  select new
+                                  {
+                                      a.AssetName,
+                                      mr.MaintenanceDate,
+                                      mr.MaintenanceDetails,
+                                      mr.MaintenanceCost
+                                  };
+            GridViewVarliklarBakimListesi.DataSource = maintenanceList.ToList();
             GridViewVarliklarBakimListesi.DataBind();
 
             var assetNames = from a in db.Assets
@@ -96,6 +104,13 @@ namespace AssetManagmentSite
                 transaction.ShowAfterDelete(UnsuccesfullyMessage, this.Page);
                 return;
             }
+            else if (AssetNameInput.Value == "" || AssetLocationInput.Value == "" || ProductPriceInput1.Value == "" || ProductPriceInput2.Value == "" || AssetBoughtDateInput.Value == "")
+            {
+                UpdatedAlertText.InnerText = "Lütfen tüm alanları doldurunuz.";
+                UpdatedAlert.Visible = true;
+                transaction.ShowAfterDelete(UpdatedAlert, this.Page);
+                return;
+            }
             try
             {
                 Asset asset = new Asset()
@@ -132,6 +147,7 @@ namespace AssetManagmentSite
                 return;
             }
 
+
             var asset = await db.Assets.FindAsync(AssetId);
             AssetNameChangeInput.Value = asset.AssetName;
             AssetLocationChangeInput.Value = asset.AssetLocation;
@@ -145,9 +161,16 @@ namespace AssetManagmentSite
         protected async void GuncelleButton_Click(object sender, EventArgs e)
         {
             int AssetId = Convert.ToInt32(DropDownListVarlikListesiAd.SelectedValue);
-            if(AssetId <= 0)
+            if (AssetId <= 0)
             {
                 UpdatedAlertText.InnerText = "Lütfen bir varlık seçiniz.";
+                UpdatedAlert.Visible = true;
+                transaction.ShowAfterDelete(UpdatedAlert, this.Page);
+                return;
+            }
+            else if (string.IsNullOrEmpty(AssetBoughtChangeInput.Value) || string.IsNullOrEmpty(AssetNameChangeInput.Value) || string.IsNullOrEmpty(AssetLocationChangeInput.Value) || string.IsNullOrEmpty(ProductPriceChangeInput1.Value) || string.IsNullOrEmpty(ProductPriceChangeInput2.Value))
+            {
+                UpdatedAlertText.InnerText = "Lütfen tüm alanları doldurunuz.";
                 UpdatedAlert.Visible = true;
                 transaction.ShowAfterDelete(UpdatedAlert, this.Page);
                 return;

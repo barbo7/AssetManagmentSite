@@ -83,7 +83,7 @@
                                                         </div>
                                                     </div>
                                                     <div class="col text-center" style="text-align: right;">
-                                                        <asp:Button runat="server" OnClick="BakimKaydiGirButton_Click" ID="ButtonKaydet" class="btn btn-dark btn-lg" type="submit" Style="margin-top: 20px;" Text="Bakım Kayıdı Gir" />
+                                                        <asp:Button runat="server"  OnClick="BakimKaydiGirButton_Click" ID="ButtonKaydet" class="btn btn-dark btn-lg" type="button" Style="margin-top: 20px;" Text="Bakım Kayıdı Gir" />
                                                     </div>
                                                 </div>
                                             </asp:Panel>
@@ -173,7 +173,6 @@
                     <asp:AsyncPostBackTrigger ControlID="ButtonGuncelle" EventName="Click" />
                     <asp:AsyncPostBackTrigger ControlID="ButtonSil" EventName="Click" />
                     <asp:AsyncPostBackTrigger ControlID="SearchMaintenanceButton" EventName="Click" />
-
 
                     <asp:AsyncPostBackTrigger ControlID="LinkButtonTab2" EventName="Click" />
                     <asp:AsyncPostBackTrigger ControlID="DDLUrunInput" EventName="SelectedIndexChanged" />
