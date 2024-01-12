@@ -153,7 +153,7 @@
                                                             <div class="input-group-text input-group-text input-group-prepend" style="height: 35px;"><span class="text-white bg-primary input-group-text" style="height: 30px;">₺</span></div>
                                                             <input runat="server" id="ProductPriceChangeInput1" class="form-control form-control-sm form-control form-control" type="text" aria-label="Amount (to the nearest dollar)" inputmode="numeric" maxlength="18"  style="width: 160px; height: 35px;" />
                                                             <div class="input-group-text input-group-text input-group-append" style="padding-left: 12px; width: 60px; height: 35px;">
-                                                                <input runat="server" id="ProductPriceChangeInput2" class="form-control form-control-sm form-control form-control" type="text" aria-label="Amount (to the nearest dollar)" autocomplete="on" inputmode="numeric" maxlength="2" minlength="1"  style="width: 38px;" value=".00" />
+                                                                <input runat="server" id="ProductPriceChangeInput2" class="form-control form-control-sm form-control form-control" type="text" aria-label="Amount (to the nearest dollar)" autocomplete="on" inputmode="numeric" maxlength="2" minlength="1"  style="width: 38px;" value="" />
                                                             </div>
                                                         </div>
                                                     </div>
