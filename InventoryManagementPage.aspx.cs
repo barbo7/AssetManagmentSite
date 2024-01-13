@@ -118,7 +118,13 @@ namespace AssetManagmentSite
             UrunVarMi(UpdatedAlert, UpdatedAlertText, "Ürün Bulunamadı.");
 
             int productId = Convert.ToInt32(DropDownListProductList.SelectedItem.Value);
-
+            if(string.IsNullOrEmpty(ProductAmountChangeInput.Value) || string.IsNullOrEmpty(ProductPriceChangeInput1.Value) || string.IsNullOrEmpty(ProductPriceChangeInput2.Value) || string.IsNullOrEmpty(ProductReorderLevelChangeInput.Value))
+            {
+                UpdatedAlertText.InnerText = "Lütfen tüm alanları doldurunuz.";
+                UpdatedAlert.Visible = true;
+                transactions.ShowAfterDelete(UpdatedAlert, this.Page);
+                return;
+            }
             try
             {
                 var product = await entities.Inventories.FindAsync(productId);

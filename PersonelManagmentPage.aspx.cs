@@ -51,12 +51,12 @@ namespace AssetManagmentSite
             bool empNameDuplicate = entities.Employees.Any(x => x.EmployeeName == NameSurnameInput.Value);
             if (NameSurnameInput.Value == "" || EmployeeDepartmentInput.Value == "" || EmployeeRoleInput.Value == "" ||  empNameDuplicate)
             {
+                UnsuccesfullyMessage.InnerText = "Personel Eklenemedi.";
 
                 if (empNameDuplicate)
                 {
                     UnsuccesfullyMessage.InnerText = "Bu isimde bir personel zaten var.";
                 }
-                UnsuccesfullyMessage.InnerText = "Personel Eklenemedi.";
 
                 UnsuccesfullyMessage.Visible = true;
 
@@ -105,7 +105,8 @@ namespace AssetManagmentSite
             {
                 int employeeId = PersonelIdGetir();
 
-                if (employeeId > 0)
+                if (employeeId > 0 && !string.IsNullOrEmpty(PersonelDepartmanChangeInput.Text) && !string.IsNullOrEmpty(PersonelRoleChangeInput.Value) &&
+                    !string.IsNullOrEmpty(PersonelDetailsChangeInput.Value) && !string.IsNullOrEmpty(NameSurnameChangeInput.Value))
                 {
                     var employee =await entities.Employees.FindAsync(employeeId);
                     employee.EmployeeName = NameSurnameChangeInput.Value;
@@ -119,8 +120,7 @@ namespace AssetManagmentSite
                 }
                 else
                 {
-                    UpdatedAlertText.InnerText = "Personel Bulunamadı!";
-
+                    UpdatedAlertText.InnerText = "Personel bilgilerini eksiksiz giriniz.!";
                 }
             }
             catch(Exception)

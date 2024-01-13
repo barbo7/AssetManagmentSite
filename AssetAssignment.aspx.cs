@@ -90,8 +90,15 @@ namespace AssetManagmentSite
                 transactions.ShowAfterDelete(UnsuccesfullyMessage, this.Page);
                 return;
             }
+            else if (string.IsNullOrEmpty(StartDateInput.Value))
+            {
+                UnsuccesfullyMessageText.InnerText = "Lütfen Kullanıma başlangıç tarihi giriniz.";
+                UnsuccesfullyMessage.Visible = true;
+                transactions.ShowAfterDelete(UnsuccesfullyMessage, this.Page);
+                return;
+            }
 
-            try
+                try
             {
                 UsageRegistration usageRegistration = new UsageRegistration()
                 {
@@ -136,22 +143,38 @@ namespace AssetManagmentSite
             try
             {
                 var usageR = await db.UsageRegistrations.Where(x => x.PersonelID == employeeId && x.AssetID == assetId).Select(x => x.UsageRegistrationID).FirstOrDefaultAsync();
-                if (usageR > 0)
+                if (usageR > 0 && !string.IsNullOrEmpty(AssetDescriptionIade.Value) && !string.IsNullOrEmpty(UsageEndDateIade.Value))
                 {
                     UsageRegistration usageRegistration = await db.UsageRegistrations.FindAsync(usageR);
                     usageRegistration.UsageDateEnd = Convert.ToDateTime(UsageEndDateIade.Value);
                     usageRegistration.Status = "İade Edildi";
-                    await db.SaveChangesAsync();
 
-                    Asset assett = db.Assets.Find(assetId);
+
+                    Request req = new Request();
+                    req.RequestDate = DateTime.Now;
+                    req.RequestDetails = AssetDescriptionIade.Value;
+                    req.RequestStatus = "Varlık İade";
+                    req.EmployeeID = employeeId;
+
+                    db.Requests.Add(req);
+
+
+                    Asset assett = await db.Assets.FindAsync(assetId);
                     assett.AssetStatus = "Boşta - İade Edildi";
-                    db.SaveChanges();
+
+                    await db.SaveChangesAsync();
 
                     VeriListele();
                     //VeriTemizle();
                     SuccessMessageText.InnerText = "Varlık başarıyla iade edildi!";
                     SuccessMessage.Visible = true;
                     transactions.ShowAfterDelete(SuccessMessage, this.Page);
+                }
+                else if(string.IsNullOrEmpty(AssetDescriptionIade.Value) && string.IsNullOrEmpty(UsageEndDateIade.Value))
+                {
+                    UpdatedAlertText.InnerText = "Boş alan bırakmayınız!";
+                    UpdatedAlert.Visible = true;
+                    transactions.ShowAfterDelete(UpdatedAlert, this.Page);
                 }
                 else
                 {

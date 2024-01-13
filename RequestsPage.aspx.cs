@@ -50,10 +50,9 @@ namespace AssetManagmentSite
         {
             int employeeId = Convert.ToInt32(DropDownListEmployee.SelectedValue);
             string requestType = DropDownListRequestType.SelectedValue;
-            if (employeeId <= 0 || requestType == "")
+            if (employeeId <= 0 || string.IsNullOrEmpty(requestType) || string.IsNullOrEmpty(description.Value))
             {
-
-                UnsuccesfullyMessageText.InnerText = "Personel veya Talep Türünü boş geçmeyiniz.";
+                UnsuccesfullyMessageText.InnerText = "Bilgileri boş geçmeyiniz.";
                 UnsuccesfullyMessage.Visible = true;
                 transactions.ShowAfterDelete(UnsuccesfullyMessage, this.Page);
                 return;
